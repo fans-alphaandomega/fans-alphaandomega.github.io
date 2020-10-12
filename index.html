@@ -21,8 +21,8 @@
 			<button class="w3-bar-item w3-button" onclick="openPage('OST')">OST</button>
 		</div>
 		
-		<div class="w3-row responsive page" id="Main">
-			<div class="w3-col w3-container m8 s12">
+		<div class="w3-row responsive">
+			<div class="w3-col w3-container m8 s12 page" id="Main">
 				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
 					<div class="w3-third leftpart">
 						<img src="images/movie1.png" class="w3-round cover">
@@ -155,21 +155,23 @@
 					</div>	
 				</div>
 			</div>
+			
+			<div class="w3-col w3-container m8 s12 page" id="Characters">
+				Characters
+			</div>
+		
+			<div class="w3-col w3-container m8 s12 page" id="OST">
+				OST
+			</div>
+			
 			<div class="w3-col m4 w3-hide-small w3-container">
 				<a target="_blank" href="https://bit.ly/2S5NMr1" class="w3-panel w3-btn w3-border w3-round-xlarge ficbook">
-					<img src ="images/ficbook.png" style="width: 300px">
+					<img src ="images/ficbook.png">
 					<h5>Adventures continue!</h5>
 				</a>
 			</div>	
 		</div>
 		
-		<div class="w3-row responsive page" id="Characters" style="display:none">
-			Characters
-		</div>
-		
-		<div class="w3-row responsive page" id="OST" style="display:none">
-			OST
-		</div>
 		
 		<script>
 			function openPage(pageName) {
