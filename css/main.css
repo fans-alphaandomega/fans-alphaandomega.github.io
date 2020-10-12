@@ -121,15 +121,14 @@ h1, h2, h3, h4, h5, h6 {
 	height: 28px;
 }	
 
-.ficbook {
-	background: #4f1700;
-	padding: 3%;
+.special {
+	padding: 3% 3% 0;
+	color: white;
 }	
 
-.ficbook {
-	color: white;
-}
-
+.nomargin {
+	margin-top: 0;
+}	
 
 @media only screen and (min-width: 100px) and (max-width: 1200px)	{
 	.responsive {
