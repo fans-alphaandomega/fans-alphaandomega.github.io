@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, h6 {
 	height: 30px;
 }	
 
+.cover {
+	width: 100%;
+}	
+
 .special {
 	padding: 3% 3% 0;
 	color: white;
