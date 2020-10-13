@@ -1,13 +1,21 @@
 html, body {
-	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+
 body {
 	background-image: url(../images/background.png);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+	line-height: 1;
 }
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -48,6 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 }	
 
 .logobar {
+	margin-top: 10px;
 	height: 33vh;
 }	
 
@@ -61,9 +70,9 @@ h1, h2, h3, h4, h5, h6 {
 	
 .leftpart a {
 	width: 100%;
-	height: 50px;
+	padding: 7%;
 	margin: 10px auto 0;
-	font-size: 2em;
+	font-size: 22px;
 }	
 
 .panel {
@@ -89,4 +98,38 @@ h1, h2, h3, h4, h5, h6 {
 .special {
 	padding: 3% 3% 0;
 	color: white;
+	font-size: 1em;
+	margin-bottom: 0;
+}	
+
+@media screen and (max-width: 1500px) and (orientation: landscape){	
+	.character {
+		width: 180px;
+	}	
+	
+	.responsive {
+		width: 90%;
+	}	
+}	
+
+@media screen and (max-width: 1500px) and (orientation: portrait){
+	.responsive {
+		width: 98%;
+	}	
+	
+	.logobar {
+		height: 22vh;
+	}	
+	
+	.character {
+		width: 22vw;
+	}	
+	
+	.special p {
+		font-size: 16px;
+	}	
+	
+	.leftpart a {
+		font-size: 16px;
+	}	
 }	
