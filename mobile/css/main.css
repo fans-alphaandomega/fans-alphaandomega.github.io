@@ -8,13 +8,19 @@ html, body {
 }
 
 body {
-	background-image: url(../../images/background.png);
+	background-image: url(../../images/lightbg.png);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	line-height: 1;
+	color: white;
 }
+
+.dark {
+	color: yellow;
+	background-image: url(../../images/darkbg.png);
+}	
 
 ::-webkit-scrollbar {
 	width: 10px;
@@ -70,7 +76,14 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 }
 
+.w3-indigo {
+	color: yellow !important;
+}
 
+nav button {
+	padding-left: 4px !important;
+	padding-right: 4px !important;
+}	
 
 @media screen and (orientation: landscape) {
 	.special {
