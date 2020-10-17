@@ -69,12 +69,16 @@ h1, h2, h3, h4, h5, h6 {
 }	
 
 .panel {
-	padding: 2%;
+	padding: 10px;
 }
 
 .leftpart, .rightpart {
 	width: 100%;
 }
+
+.rightpart p {
+	margin-bottom: 0 !important;
+}	
 
 .w3-indigo {
 	color: yellow !important;
