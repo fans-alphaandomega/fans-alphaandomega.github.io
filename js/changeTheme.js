@@ -24,7 +24,7 @@ function lightMode() {
 	y.style.display = "none";
 	document.getElementById("moon").style.display = "block";
 	var z = document.querySelectorAll('.w3-dark-grey');
-	for (j = 0; j < z.length; i++) {
+	for (j = 0; j < z.length; j++) {
 		z[j].className = z[j].className.replace(/\bw3-dark-grey\b/g, "w3-white");
 	}
 }
