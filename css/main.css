@@ -65,7 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 }	
 
 .logo {
-	width: 40%;
+	width: 50%;
+	vertical-align: baseline;
 }	
 	
 .leftpart a {
@@ -114,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 1500px) and (orientation: portrait){
 	.responsive {
-		width: 98%;
+		width: 100%;
 	}	
 	
 	.logobar {

@@ -9,8 +9,23 @@
 		<link rel="stylesheet" href="css/main.css">
 		<script src="https://fans-alphaandomega.github.io/js/openPage.js"></script>
 		<script src="https://fans-alphaandomega.github.io/js/showMore.js"></script>
+		<script src="https://fans-alphaandomega.github.io/js/showSidebar.js"></script>
 	</head>
 	<body>
+		<nav class="w3-sidebar w3-bar-block w3-card" id="sd">
+			<div class="w3-container w3-theme-d2">
+				<span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+			</div>
+			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
+			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
+			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
+		</nav>
+		
+		<header class="w3-bar w3-card w3-theme w3-teal">
+			<button class="w3-bar-item w3-teal w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+			<img src="../images/logo.png" style="width: 100px; height: 40px;">
+		</header>
+	
 		<header class="w3-display-container responsive logobar">
 			<img src="../images/logo.png" class="w3-display-middle logo">
 		</header>
@@ -25,18 +40,18 @@
 		<main class="responsive">
 			<div class="w3-container page" id="Main">
 				<div class="w3-teal w3-panel w3-row w3-border w3-round-xlarge panel">
-					<div class="w3-row s12 m4">
-						<img src="../images/movie1.png" class="w3-round-cover w3-image">
+					<div class="w3-row s12 m4 leftpart">
+						<img src="../images/movie1.png" class="w3-round w3-image cover">
 						<a target="_blank" href="https://bit.ly/2Fsn09K" class="w3-button w3-white w3-round-xxlarge" style="margin-top: 10px">Смотреть на <b>BASKINO</b></a>
 					</div>
-					<div class="w3-row s12 m8">
-					<h3>Альфа и Омега: Клыкастая братва (2010)</h3>
-					<!--<button onclick="showMore('movie1')" class="w3-button w3-block w3-left-align">Read about movie</button>
-						<div id="movie1" class="w3-container w3-hide">-->
-					<p>Come along on the ultimate road-trip adventure that will leave the whole family 
-					howling with laughter! When Kate and Humphrey, Alpha and Omega wolves, are suddenly 
-					relocated, they must begin an incredible journey home to Jasper Park to save their pack!</p>
-					<!--</div>-->
+					<div class="w3-row s12 m8 rightpart">
+						<h3>Альфа и Омега: Клыкастая братва (2010)</h3>
+						<!--<button onclick="showMore('movie1')" class="w3-button w3-block w3-left-align">Read about movie</button>
+							<div id="movie1" class="w3-container w3-hide">-->
+						<p>Come along on the ultimate road-trip adventure that will leave the whole family 
+						howling with laughter! When Kate and Humphrey, Alpha and Omega wolves, are suddenly 
+						relocated, they must begin an incredible journey home to Jasper Park to save their pack!</p>
+						<!--</div>-->
 					</div>
 				</div>
 			</div>
