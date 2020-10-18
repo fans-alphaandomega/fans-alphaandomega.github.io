@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-	background-image: url(../../images/lightbg.png);
+	background-image: url(../../images/bg_light.png);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -19,7 +19,7 @@ body {
 
 .dark {
 	color: yellow;
-	background-image: url(../../images/darkbg.png);
+	background-image: url(../../images/bg_dark.png);
 }	
 
 ::-webkit-scrollbar {
@@ -55,10 +55,6 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	margin: auto;
 }	
-
-.logobar {
-	height: 200px;
-}
 
 .special {
 	height: 36px;
