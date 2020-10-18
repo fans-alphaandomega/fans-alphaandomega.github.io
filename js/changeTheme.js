@@ -12,6 +12,8 @@ function darkMode() {
 	for (j = 0; j < z.length; j++) {
 		z[j].className = z[j].className.replace(/\bw3-white\b/g, "w3-dark-grey");
 	}
+	var a = document.getElementsByClassName('side');
+	a.style.color = "yellow";
 }
 function lightMode() {
 	var w = document.querySelectorAll('.w3-indigo');
@@ -27,4 +29,6 @@ function lightMode() {
 	for (j = 0; j < z.length; j++) {
 		z[j].className = z[j].className.replace(/\bw3-dark-grey\b/g, "w3-white");
 	}
+	var a = document.getElementsByClassName('side');
+	a.style.color = "white";
 }

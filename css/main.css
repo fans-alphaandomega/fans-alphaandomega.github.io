@@ -17,7 +17,6 @@ body {
 }
 
 .dark {
-	color: yellow !important;
 	background-image: url(../../images/bg_dark.png);
 }	
 
@@ -97,7 +96,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .special {
 	padding: 3% 3% 0;
-	color: white;
 	margin-bottom: 0;
 }
 
