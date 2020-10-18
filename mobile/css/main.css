@@ -84,9 +84,18 @@ h1, h2, h3, h4, h5, h6 {
 	color: orange !important;
 }	
 
-nav button {
+nav button, .navlogo {
 	padding-left: 4px !important;
 	padding-right: 4px !important;
+}
+
+.listen {
+	margin-top: 6px;
+	padding: 4px 2px !important;
+}	
+
+.sb {
+	display: none;
 }	
 
 @media screen and (orientation: landscape) {
@@ -102,7 +111,12 @@ nav button {
 		height: 80vh;
 	}
 	
-	.leftpart, .rightpart {
+	/*.ost {
+		width: 70vh;
+		height: 70vh;
+	}*/	
+	
+	.leftpart, .rightpart, .leftmusic, .rightmusic {
 		padding: 2%;
 	}	
 	
@@ -114,8 +128,26 @@ nav button {
 		width: 65%;
 	}
 
+	.leftmusic {
+		width: 40%;
+	}
+
+	.rightmusic {
+		width: 60%;
+	}	
+
 	.nomargin {
 		margin: auto;
 	}	
 
 }
+
+@media screen and (orientation: landscape) and (max-width: 580px) {
+	.lb {
+		display: none;
+	}	
+	
+	.sb {
+		display: block;
+	}	
+}	
