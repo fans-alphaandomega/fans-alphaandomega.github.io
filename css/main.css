@@ -17,7 +17,7 @@ body {
 }
 
 .dark {
-	color: yellow;
+	color: yellow !important;
 	background-image: url(../../images/bg_dark.png);
 }	
 
