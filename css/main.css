@@ -16,6 +16,11 @@ body {
 	line-height: 1;
 }
 
+.dark {
+	color: yellow;
+	background-image: url(../../images/bg_dark.png);
+}	
+
 ::-webkit-scrollbar {
 	width: 10px;
 }
@@ -114,6 +119,13 @@ h1, h2, h3, h4, h5, h6 {
 	width: 50%;
 }	
 
+.w3-indigo {
+	color: yellow !important;
+}
+
+.w3-dark-grey {
+	color: orange !important;
+}	
 
 
 @media screen and (max-width: 1500px) and (orientation: landscape){	

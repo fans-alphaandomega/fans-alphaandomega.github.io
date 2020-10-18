@@ -7,8 +7,9 @@
 		<link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="css/main.css">
-		<script src="https://fans-alphaandomega.github.io/js/detectMobile.js"></script>
-		<script src="https://fans-alphaandomega.github.io/js/openPage.js"></script>
+		<script src="js/detectMobile.js"></script>
+		<script src="js/changeTheme.js"></script>
+		<script src="js/openPage.js"></script>
 	</head>
 	<body>
 		<header class="w3-display-container responsive logobar">
@@ -21,6 +22,8 @@
 			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
+			<button class="w3-bar-item w3-button w3-right" onclick="darkMode()" id="moon">Тёмная тема</button>
+			<button class="w3-bar-item w3-button w3-right" onclick="lightMode()" id="sun" style="display: none">Светлая тема</button>
 			<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/mobile">Мобильная версия</a></button>
 		</div>
 		
