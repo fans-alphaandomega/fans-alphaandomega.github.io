@@ -8,11 +8,11 @@ function darkMode() {
 		v[i].className = v[i].className.replace(/\bw3-teal\b/g, "w3-indigo");
 	}
 	// mobile icons
-	var w = document.querySelectorAll('#sun');
+	var w = document.querySelectorAll('[id=sun]');
 	for (i = 0; i < w.length; i++) {
 		w[i].style.display = "none";
 	}
-	var x = document.querySelectorAll('#moon');
+	var x = document.querySelectorAll('[id=moon]');
 	for (i = 0; i < x.length; i++) {
 		x[i].style.display = "block";
 	}
@@ -36,11 +36,11 @@ function lightMode() {
 		v[i].className = v[i].className.replace(/\bw3-indigo\b/g, "w3-teal");
 	}
 	// mobile icons
-	var w = document.querySelectorAll('#moon');
+	var w = document.querySelectorAll('[id=moon]');
 	for (i = 0; i < w.length; i++) {
 		w[i].style.display = "none";
 	}
-	var x = document.querySelectorAll('#sun');
+	var x = document.querySelectorAll('[id=sun]');
 	for (i = 0; i < x.length; i++) {
 		x[i].style.display = "block";
 	}
