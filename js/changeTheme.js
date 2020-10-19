@@ -1,34 +1,55 @@
 function darkMode() {
-	var w = document.querySelectorAll('.w3-teal');
+	// background
+	var u = document.body;
+	u.classList.toggle("dark");
+	// teal elements
+	var v = document.querySelectorAll('.w3-teal');
+	for (i = 0; i < v.length; i++) {
+		v[i].className = v[i].className.replace(/\bw3-teal\b/g, "w3-indigo");
+	}
+	// mobile icons
+	var w = document.querySelectorAll('#sun');
 	for (i = 0; i < w.length; i++) {
-		w[i].className = w[i].className.replace(/\bw3-teal\b/g, "w3-indigo");
+		w[i].style.display = "none";
 	}
-	var x = document.body;
-	x.classList.toggle("dark");
-	var y = document.getElementById("moon");
-	y.style.display = "none";
-	document.getElementById("sun").style.display = "block";
-	var z = document.querySelectorAll('.w3-white');
-	for (j = 0; j < z.length; j++) {
-		z[j].className = z[j].className.replace(/\bw3-white\b/g, "w3-dark-grey");
+	var x = document.querySelectorAll('#moon');
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "block";
 	}
-	var a = document.getElementById("side");
-	a.style.color = "yellow";
+	// buttons
+	var y = document.querySelectorAll('.w3-white');
+	for (i = 0; i < y.length; i++) {
+		y[i].className = y[i].className.replace(/\bw3-white\b/g, "w3-dark-grey");
+	}
+	// side
+	var z = document.getElementById("side");
+	z.style.color = "yellow";
 }
+
 function lightMode() {
-	var w = document.querySelectorAll('.w3-indigo');
+	// background
+	var u = document.body;
+	u.classList.toggle("dark");
+	// indigo elements
+	var v = document.querySelectorAll('.w3-indigo');
 	for (i = 0; i < w.length; i++) {
-		w[i].className = w[i].className.replace(/\bw3-indigo\b/g, "w3-teal");
+		v[i].className = v[i].className.replace(/\bw3-indigo\b/g, "w3-teal");
 	}
-	var x = document.body;
-	x.classList.toggle("dark");
-	var y = document.getElementById("sun");
-	y.style.display = "none";
-	document.getElementById("moon").style.display = "block";
-	var z = document.querySelectorAll('.w3-dark-grey');
-	for (j = 0; j < z.length; j++) {
-		z[j].className = z[j].className.replace(/\bw3-dark-grey\b/g, "w3-white");
+	// mobile icons
+	var w = document.querySelectorAll('#moon');
+	for (i = 0; i < w.length; i++) {
+		w[i].style.display = "none";
 	}
-	var a = document.getElementById("side");
-	a.style.color = "white";
+	var x = document.querySelectorAll('#sun');
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "block";
+	}
+	//buttons
+	var y = document.querySelectorAll('.w3-dark-grey');
+	for (i = 0; i < y.length; i++) {
+		y[i].className = y[i].className.replace(/\bw3-dark-grey\b/g, "w3-white");
+	}
+	//side
+	var z = document.getElementById("side");
+	z.style.color = "white";
 }
