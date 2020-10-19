@@ -14,10 +14,12 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	line-height: 1;
+	color: white;
 }
 
 .dark {
-	background-image: url(../../images/bg_dark.jpg);
+	background-image: url(../images/bg_dark.jpg);
+	color: yellow !important;
 }	
 
 ::-webkit-scrollbar {
@@ -117,42 +119,87 @@ h1, h2, h3, h4, h5, h6 {
 	width: 50%;
 }	
 
-.w3-indigo {
-	color: yellow !important;
-}
+.text-white {
+	color: white !important;
+}	
 
-.w3-dark-grey {
+.text-yellow {
+	color: yellow !important;
+}	
+
+.text-orange {
 	color: orange !important;
 }	
 
-#side {
-	color: white;
-}
-	
-@media screen and (max-width: 1500px) and (orientation: landscape){	
-	.character {
-		width: 180px;
-	}	
-	
+@media (max-width: 1599.98px) {
 	.responsive {
-		width: 90%;
+		width: 98%;
+	}
+
+	.logobar {
+		height: 40ph;
+	}
+	
+	.logo {
+		width: 40%;
+	}	
+
+	.character {
+		width: 200px;
 	}	
 }	
 
-@media screen and (max-width: 1500px) and (orientation: portrait){
-	.responsive {
-		width: 100%;
-	}	
+@media (max-width: 1199.98px) {
 	
+}
+
+@media (max-width: 991.98px) {
+	
+}
+
+@media (max-width: 767.98px) {
 	.logobar {
-		height: 22vh;
+		height: 40vh;
 	}	
 	
 	.character {
-		width: 22vw;
-	}	
-	
-	.special p {
-		font-size: 16px;
+		width: 190px;
+	}
+
+	.lb {
+		display: none !important;
+	}
+
+	.sb {
+		display: block !important;
 	}	
 }	
+	
+@media (orientation: portrait) {
+	.logobar {
+		height: 30vh;
+	}
+
+	.character {
+		width: 220px;
+	}	
+
+	.w3-container, .w3-panel {
+		padding: 0.01em 8px;
+	}
+
+	.logo {
+		width: 40%;
+	}	
+	
+	.lb {
+		display: none !important;
+	}
+
+	.sb {
+		display: block !important;
+	}	
+}	
+
+ 
+
