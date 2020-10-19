@@ -127,7 +127,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #side {
 	color: white;
-}	
+}
+	
 @media screen and (max-width: 1500px) and (orientation: landscape){	
 	.character {
 		width: 180px;
