@@ -1,7 +1,7 @@
 function darkMode() {
 	var i, j, k, l;
 	// background
-	var v = document.body;
+	var v = document.getElementById('parallax');
 	v.classList.toggle("dark");
 	// teal elements
 	var w = document.querySelectorAll('.w3-teal');
@@ -27,7 +27,7 @@ function darkMode() {
 function lightMode() {
 	var i, j, k, l;
 	// background
-	var v = document.body;
+	var v = document.getElementById('parallax');
 	v.classList.toggle("dark");
 	// indigo elements
 	var w = document.querySelectorAll('.w3-indigo');

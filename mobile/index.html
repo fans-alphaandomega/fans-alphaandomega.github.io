@@ -13,7 +13,11 @@
 		
 	</head>
 	<body>
-		<nav class="w3-bar w3-teal responsive">
+		<div class="parallax" id="parallax">
+			<!--Фикс бэкграунда-->
+		</div>
+	
+		<header class="w3-bar w3-teal responsive">
 			<div class="w3-bar-item w3-left navlogo"><img src="../images/nav-logo.png" class="special"></div>
 			<button class="w3-bar-item w3-button w3-left" onclick="darkMode()" id="sun"><img src="../images/nav-darktheme.png" class="special"></button>
 			<button class="w3-bar-item w3-button w3-left" onclick="lightMode()" id="moon" style="display: none"><img src="../images/nav-lighttheme.png" class="special"></button>
@@ -23,7 +27,7 @@
 			<button class="w3-bar-item w3-button w3-right" onclick="openPage('OST')" id="moon" style="display: none"><img src="../images/nav-ost-y.png" class="special"></button>
 			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Main')" id="sun"><img src="../images/nav-main.png" class="special"></button>
 			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Main')" id="moon" style="display: none"><img src="../images/nav-main-y.png" class="special"></button>
-		</nav>
+		</header>
 		
 		<main class="responsive">
 			<div class="w3-container w3-row page" id="Main">

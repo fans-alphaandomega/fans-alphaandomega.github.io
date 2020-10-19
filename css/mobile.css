@@ -5,20 +5,32 @@ html, body {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	height: 100%;
 }
 
-body {
-	/*background-image: url(../../images/bg_light_v.jpg);*/
-	background-image: linear-gradient(rgba(71, 137, 151, 1), rgba(186, 201, 50l, 1));
-	background-position: center center;
+header, main, footer {
+	z-index: 1;
+}	
+
+.parallax {
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	width: 100vw;
+	height: 100%;
+	background-image: url(../images/bg_light.jpg);
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
-	line-height: 1;
-}
+	background-attachment: scroll;
+	
+}	
 
 .dark {
-	/*background-image: url(../../images/bg_dark_v.jpg);*/
+	background-image: url(../images/bg_dark.jpg);
 }	
 
 ::-webkit-scrollbar {
@@ -83,12 +95,12 @@ h1, h2, h3, h4, h5, h6 {
 	color: orange !important;
 }	
 
-nav button, .navlogo {
+header button, .navlogo {
 	padding-left: 4px !important;
 	padding-right: 4px !important;
 }
 
-nav a {
+header a, footer a {
 	padding-left: 8px !important;
 	padding-right: 8px !important;
 }	
@@ -108,14 +120,6 @@ nav a {
 }	
 
 @media screen and (orientation: landscape) {
-	/*body {
-		*background-image: url(../../images/bg_light_h.jpg);
-	}
-	
-	.dark {
-		background-image: url(../../images/bg_dark_h.jpg);
-	}*/
-	
 	.special {
 		height: 48px;
 	}	
