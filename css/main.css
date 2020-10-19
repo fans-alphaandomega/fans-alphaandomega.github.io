@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-	background-image: url(../images/bg_light.png);
+	background-image: url(../images/bg_light.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -17,7 +17,7 @@ body {
 }
 
 .dark {
-	background-image: url(../../images/bg_dark.png);
+	background-image: url(../../images/bg_dark.jpg);
 }	
 
 ::-webkit-scrollbar {
