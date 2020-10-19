@@ -22,7 +22,7 @@ header, main, footer {
 	width: 100vw;
 	height: 100%;
 	background-image: url(../images/bg_light.jpg);
-	background-position: center;
+	background-position: 10% 0;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: scroll;
