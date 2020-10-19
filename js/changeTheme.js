@@ -1,4 +1,5 @@
 function darkMode() {
+	var i, j, k, l;
 	// background
 	var u = document.body;
 	u.classList.toggle("dark");
@@ -9,17 +10,17 @@ function darkMode() {
 	}
 	// mobile icons
 	var w = document.querySelectorAll('[id=sun]');
-	for (i = 0; i < w.length; i++) {
-		w[i].style.display = "none";
+	for (j = 0; j < w.length; j++) {
+		w[j].style.display = "none";
 	}
 	var x = document.querySelectorAll('[id=moon]');
-	for (i = 0; i < x.length; i++) {
-		x[i].style.display = "block";
+	for (k = 0; k < x.length; k++) {
+		x[k].style.display = "block";
 	}
 	// buttons
 	var y = document.querySelectorAll('.w3-white');
-	for (i = 0; i < y.length; i++) {
-		y[i].className = y[i].className.replace(/\bw3-white\b/g, "w3-dark-grey");
+	for (l = 0; l < y.length; i++) {
+		y[l].className = y[l].className.replace(/\bw3-white\b/g, "w3-dark-grey");
 	}
 	// side
 	var z = document.getElementById("side");
@@ -27,6 +28,7 @@ function darkMode() {
 }
 
 function lightMode() {
+	var i, j, k, l;
 	// background
 	var u = document.body;
 	u.classList.toggle("dark");
@@ -37,17 +39,17 @@ function lightMode() {
 	}
 	// mobile icons
 	var w = document.querySelectorAll('[id=moon]');
-	for (i = 0; i < w.length; i++) {
-		w[i].style.display = "none";
+	for (j = 0; j < w.length; j++) {
+		w[j].style.display = "none";
 	}
 	var x = document.querySelectorAll('[id=sun]');
-	for (i = 0; i < x.length; i++) {
-		x[i].style.display = "block";
+	for (k = 0; k < x.length; k++) {
+		x[k].style.display = "block";
 	}
 	//buttons
 	var y = document.querySelectorAll('.w3-dark-grey');
-	for (i = 0; i < y.length; i++) {
-		y[i].className = y[i].className.replace(/\bw3-dark-grey\b/g, "w3-white");
+	for (l = 0; l < y.length; l++) {
+		y[l].className = y[l].className.replace(/\bw3-dark-grey\b/g, "w3-white");
 	}
 	//side
 	var z = document.getElementById("side");
