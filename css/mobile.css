@@ -10,7 +10,11 @@ html, body {
 }
 
 body {
-	background: -webkit-linear-gradient(rgba(70, 137, 153, 1), rgba(182, 206, 193, 1));
+	background: rgb(182,206,193);
+	background: -moz-linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
+	background: linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6cec1",endColorstr="#39afcb",GradientType=1);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }	
