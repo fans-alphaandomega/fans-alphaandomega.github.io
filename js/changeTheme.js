@@ -34,7 +34,7 @@ function lightMode() {
 	u.classList.toggle("dark");
 	// indigo elements
 	var v = document.querySelectorAll('.w3-indigo');
-	for (i = 0; i < w.length; i++) {
+	for (i = 0; i < v.length; i++) {
 		v[i].className = v[i].className.replace(/\bw3-indigo\b/g, "w3-teal");
 	}
 	// mobile icons
