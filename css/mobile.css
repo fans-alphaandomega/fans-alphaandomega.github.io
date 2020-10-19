@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-	background-image: url(../../images/bg_light_v.png);
+	background-image: url(../../images/bg_light_v.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -17,7 +17,7 @@ body {
 }
 
 .dark {
-	background-image: url(../../images/bg_dark_v.png);
+	background-image: url(../../images/bg_dark_v.jpg);
 }	
 
 ::-webkit-scrollbar {
@@ -108,11 +108,11 @@ nav a {
 
 @media screen and (orientation: landscape) {
 	body {
-		background-image: url(../../images/bg_light_h.png);
+		background-image: url(../../images/bg_light_h.jpg);
 	}
 	
 	.dark {
-		background-image: url(../../images/bg_dark_h.png);
+		background-image: url(../../images/bg_dark_h.jpg);
 	}
 	
 	.special {
