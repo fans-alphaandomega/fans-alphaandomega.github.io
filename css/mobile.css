@@ -87,6 +87,11 @@ nav button, .navlogo {
 	padding-right: 4px !important;
 }
 
+nav a {
+	padding-left: 8px !important;
+	padding-right: 8px !important;
+}	
+
 .listen {
 	margin-top: 6px;
 	padding: 4px 2px !important;
