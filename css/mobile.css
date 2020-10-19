@@ -25,7 +25,7 @@ header, main, footer {
 	background-position: 10% 0;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: scroll;
+	background-attachment: fixed;
 	
 }	
 
