@@ -15,8 +15,6 @@ body {
 	background: -webkit-linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
 	background: linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6cec1",endColorstr="#39afcb",GradientType=1);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
 }	
 
 header, main, footer {
