@@ -19,7 +19,7 @@ function darkMode() {
 	}
 	// buttons
 	var y = document.querySelectorAll('.w3-white');
-	for (l = 0; l < y.length; i++) {
+	for (l = 0; l < y.length; l++) {
 		y[l].className = y[l].className.replace(/\bw3-white\b/g, "w3-dark-grey");
 	}
 	// side
