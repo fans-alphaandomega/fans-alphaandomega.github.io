@@ -18,6 +18,7 @@ function darkMode() {
 	var y = document.querySelectorAll('.w3-white');
 	for (j = 0; j < y.length; j++) {
 		y[j].className = y[j].className.replace(/\bw3-white\b/g, "w3-dark-grey");
+		y[j].classList.toggle("text-orange");
 	}
 	// side
 	var z = document.querySelectorAll('.side');
@@ -46,6 +47,7 @@ function lightMode() {
 	var y = document.querySelectorAll('.w3-dark-grey');
 	for (j = 0; j < y.length; j++) {
 		y[j].className = y[j].className.replace(/\bw3-dark-grey\b/g, "w3-white");
+		y[j].classList.toggle("text-orange");
 	}
 	// side
 	var z = document.querySelectorAll('.side');
