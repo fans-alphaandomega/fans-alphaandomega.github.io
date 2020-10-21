@@ -51,23 +51,9 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: Verdana, Geneva, sans-serif;
 }
 
-.responsive {
+.responsive, .full {
 	margin: auto;
 	width: 70%;
-}	
-
-.logobar {
-	margin-top: 10px;
-	height: 33vh;
-}	
-
-.character {
-	width: 259px;
-}	
-
-.logo {
-	width: 50%;
-	vertical-align: baseline;
 }	
 	
 .leftpart a {
@@ -76,20 +62,25 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 10px auto 0;
 }	
 
-.panel {
+.w3-panel {
 	padding: 1%;
-}
+}	
 
 .leftpart, .leftmusic {
 	padding: 2% 1% 2% 2%;
 }
 
 .rightpart, .rightmusic {
-	padding: 0 2% 2% 1%;
+	padding: 2% 2% 2% 1%;
 }	
 
-.sitelogo {
-	height: 30px;
+.rightpart h3, .rightmusic h3,
+.rightpart h4, .rightmusic h4 {
+	margin-top: 0 !important;
+}	
+
+.page-left, .page-right {
+	padding: 0.01em 8px !important; 
 }	
 
 .cover {
@@ -97,8 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }	
 
 .special {
-	padding: 3% 3% 0;
-	margin-bottom: 0;
+	padding: 3% 3% 0 !important;
 }
 
 .temporary {
@@ -110,13 +100,14 @@ h1, h2, h3, h4, h5, h6 {
 	height: 48px;
 }	
 
+.footer-link {
+	padding-left: 8px !important;
+	padding-right: 8px !important;
+}	
+
 .listen {
 	margin-top: 6px;
 	padding: 4px 2px !important;
-}	
-
-.leftmusic, .rightmusic {
-	width: 50%;
 }	
 
 .text-white {
@@ -136,62 +127,22 @@ h1, h2, h3, h4, h5, h6 {
 		width: 98%;
 	}
 
-	.logobar {
-		height: 40ph;
-	}
-	
-	.logo {
-		width: 40%;
-	}	
-
-	.character {
-		width: 200px;
+	.full {
+		width: 100%;
 	}	
 }	
 
-@media (max-width: 1199.98px) {
-	
-}
-
-@media (max-width: 991.98px) {
-	
-}
-
-@media (max-width: 767.98px) {
-	.logobar {
-		height: 40vh;
-	}	
-	
-	.character {
-		width: 190px;
-	}
-
-	.lb {
+@media (max-width: 767.98px) {	
+	.lb, .side h3, .rightpart h3, .rightmusic h3 {
 		display: none !important;
 	}
 
-	.sb {
+	.sb, .side h4, .rightpart h4, .rightmusic h4 {
 		display: block !important;
 	}	
 }	
 	
-@media (orientation: portrait) {
-	.logobar {
-		height: 30vh;
-	}
-
-	.character {
-		width: 220px;
-	}	
-
-	.w3-container, .w3-panel {
-		padding: 0.01em 8px;
-	}
-
-	.logo {
-		width: 40%;
-	}	
-	
+@media (orientation: portrait) {		
 	.lb {
 		display: none !important;
 	}

@@ -11,25 +11,24 @@
 		<script src="js/changeTheme.js"></script>
 		<script src="js/openPage.js"></script>
 	</head>
-	<body>
-		<header class="w3-display-container responsive logobar">
-			<img src="images/header-kate.png" class="w3-display-left w3-mobile w3-hide-small character">
-			<img src="images/header-logo.png" class="w3-display-middle logo">
-			<img src="images/header-humphrey.png" class="w3-display-right w3-mobile w3-hide-small character">
+	<body>		
+		<header class="w3-row full">
+			<img src="images/header-big.png" class="w3-col w3-hide-small" style="width: 100%; height: 100%; padding: 2%">
+			<img src="images/header-logo.png" class="w3-col w3-hide-medium w3-hide-large" style="padding: 4%">
 		</header>
 				
-		<div class="w3-bar w3-teal responsive">
+		<nav class="w3-teal w3-bar full">
 			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
-			<button class="w3-bar-item w3-button w3-right" onclick="darkMode()" id="moon">Тёмная тема</button>
-			<button class="w3-bar-item w3-button w3-right" onclick="lightMode()" id="sun" style="display: none">Светлая тема</button>
-			<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/en-US" title="Перейти на английскую версию сайта">Английская версия</a></button>
+			<button class="w3-bar-item w3-button w3-right" onclick="darkMode()" id="moon">Активировать тёмную тему</button>
+			<button class="w3-bar-item w3-button w3-right" onclick="lightMode()" id="sun" style="display: none">Активировать светлую тему</button>
+			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/en-US" title="Перейти на английскую версию сайта">Английская версия</a></button>-->
 			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/mobile" title="Перейти на мобильную версию сайта">Мобильная версия</a></button>-->
-		</div>
+		</nav>
 		
 		<main class="w3-row responsive">
-			<div class="w3-col w3-container m8 l8 page" id="Main">
+			<div class="w3-col w3-container m8 l8 page-left" id="Main">
 				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
 					<div class="w3-third leftpart">
 						<img src="images/movie1.png" class="w3-round cover">
@@ -40,6 +39,7 @@
 					</div>
 					<div class="w3-twothird rightpart">
 						<h3>Альфа и Омега: Клыкастая братва (2010)</h3>
+						<h4 style="display: none">Альфа и Омега: Клыкастая братва (2010)</h4>
 						<p>Come along on the ultimate road-trip adventure that will leave the whole family 
 						howling with laughter! When Kate and Humphrey, Alpha and Omega wolves, are suddenly 
 						relocated, they must begin an incredible journey home to Jasper Park to save their pack!</p>
@@ -55,6 +55,7 @@
 					</div>
 					<div class="w3-twothird rightpart">					
 						<h3>Альфа и Омега 2: Приключения праздничного воя (2013)</h3>
+						<h4 style="display: none">Альфа и Омега 2: Приключения праздничного воя (2013)</h4>
 						<p>Kate and Humphrey and their 3 wolf cubs, Stinky, Claudette and Runt, are happily 
 						preparing to celebrate their first winter holidays together when their smallest cub, Runt, 
 						mysteriously disappears. They must now go on a new journey across the wilderness to find 
@@ -75,6 +76,7 @@
 					</div>
 					<div class="w3-twothird rightpart">					
 						<h3>Альфа и Омега 3: Великие волчьи игры (2014)</h3>
+						<h4 style="display: none">Альфа и Омега 3: Великие волчьи игры (2014)</h4>
 						<p>Join the pack in this wild, warm hearted and totally pawsome adventure starring 
 						everyone's favorite alphas and omegas! It's time for "The Great Wolf Games," when all 
 						the alphas in the packs set aside their differences for some friendly competition. When 
@@ -94,6 +96,7 @@
 					</div>
 					<div class="w3-twothird rightpart">					
 						<h3>Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h3>
+						<h4 style="display: none">Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h4>
 						<p>The Alphas and Omegas share a thrilling adventure filled with suspense, humor and 
 						heartwarming moments after Runt - Kate and Humphrey's Omega wolf cub - sneaks off to 
 						explore the haunted Saw Tooth Cave. When Runt finds a wolf that's been driven from her 
@@ -111,6 +114,7 @@
 					</div>
 					<div class="w3-twothird rightpart">					
 						<h3>Альфа и Омега 5: Семейный отдых(2015)</h3>
+						<h4 style="display: none">Альфа и Омега 5: Семейный отдых(2015)</h4>
 						<p>Pack up for a howling fun movie adventure filled with action, laughs, and tender 
 						moments as Kate and Humphrey take their pups on their first family vacation! The wolves 
 						are ready for a relaxing getaway to Alfred Creek Falls - until they discover trappers 
@@ -129,6 +133,7 @@
 					</div>
 					<div class="w3-twothird rightpart">					
 						<h3>Альфа и Омега 6: Прогулка с динозавром (2016)</h3>
+						<h4 style="display: none">Альфа и Омега 6: Прогулка с динозавром (2016)</h4>
 						<p>After Kate, Humphrey, and their three pups are forced to relocate their den, they 
 						discover Amy, a friendly raptor that magically came to life after being uncovered 
 						during a big dig! The pups and their forest friends show Amy the wonders of their new 
@@ -146,6 +151,7 @@
 					</div>
 					<div class="w3-twothird rightpart">					
 						<h3>Альфа и Омега 7: Большое обледенение (2016)</h3>
+						<h4 style="display: none">Альфа и Омега 7: Большое обледенение (2016)</h4>
 						<p>Join everyone's favorite alpha and omega wolves for a heartwarming holiday adventure!
 						When Kate and Humphrey get lost in the woods and fail to appear for the holidays, their 
 						wolf pups—Stinky, Claudette, and Runt—take matters into their own paws and venture out 
@@ -164,6 +170,7 @@
 					</div>
 					<div class="w3-twothird rightpart">					
 						<h3>Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h3>
+						<h4 style="display: none">Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h4>
 						<p>When the Queen Bear and her daughter, Princess Canue, visit the Eastern Valley an 
 						epic war breaks out -- Rogue Wolves versus the Western Pack and the Bear Army. Now, it's 
 						up to Stinky, Claudette, and Runt to help Princess Canue return home to regain control 
@@ -172,23 +179,24 @@
 				</div>
 			</div>
 			
-			<div class="w3-col w3-container m8 l8 s12 page" id="Characters" style="display: none">
+			<div class="w3-col w3-container m8 l8 s12 page-left" id="Characters" style="display: none">
 				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
 					<h1>Персонажи. Раздел в разработке</h1>
 				</div>
 			</div>
 		
-			<div class="w3-col w3-container m8 l8 s12 page" id="OST" style="display: none">
+			<div class="w3-col w3-container m8 l8 s12 page-left" id="OST" style="display: none">
 				<div class="w3-row w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-col leftmusic">
+					<div class="w3-col leftmusic" style="width: 50%">
 						<img src="images/listen-ost.png" class="w3-round w3-image cover">
 						<a target="_blank" href="https://bit.ly/2GZIxqu" class="w3-button w3-white w3-round-large" style="width: 100%; margin-top: 10px" title="Скачать бесплатно с нашего Google Drive"><b>СКАЧАТЬ</b></a>
 						<a target="_blank" href="https://bit.ly/3iU6zR0" class="w3-button listen" title="Слушать бесплатно на YouTube"><img src="../images/listen-youtube.png" style="width: 100%"></a>
 						<a target="_blank" href="https://apple.co/3nKyczS" class="w3-button listen" title="Слушать с подпиской в Apple Music"><img src="../images/listen-apple.png" style="width: 100%"></a>
 						<a target="_blank" href="https://spoti.fi/34a669k" class="w3-button listen" title="Слушать с подпиской в Spotify"><img src="../images/listen-spotify.png" style="width: 100%"></a>
 					</div>
-					<div class="w3-col rightmusic">					
+					<div class="w3-col rightmusic" style="width: 50%">					
 						<h3>Альфа и Омега: Оригинальный саундтрек (2010)</h3>
+						<h4 style="display: none">Альфа и Омега: Оригинальный саундтрек (2010)</h4>
 						<p>
 							Композитор - Крис Бэкон<br/></br>
 							01 - Pre Teen Wolves<br/>
@@ -218,36 +226,39 @@
 				</div>
 			</div>	
 			
-			<div class="w3-col m4 l4 w3-hide-small w3-container">
-				<div class="w3-panel w3-center w3-border w3-round-xlarge panel side special" style="background: #4f1700">		
+			<div class="w3-col m4 l4 w3-hide-small w3-container page-right">
+				<div class="w3-panel w3-center w3-border w3-round-xlarge side special" style="background: #4f1700">		
 					<a target="_blank" href="https://bit.ly/2S5NMr1" style="text-decoration: none" title="Фанфики по Альфе и Омеге">
 						<img src ="images/side-ficbook.png" style="width: 100%"><br>
 						<h3>Приключения продолжаются!</h3>
+						<h4 style="display: none">Приключения продолжаются!</h4>
 					</a>
 				</div>
 				
-				<div class="w3-panel w3-center w3-border w3-round-xlarge panel side special" style="background: #4d76a1">
+				<div class="w3-panel w3-center w3-border w3-round-xlarge side special" style="background: #4d76a1">
 					<a target="_blank" href="https://bit.ly/3dCa9OT" style="text-decoration: none" title="Наша группа ВКонтакте">
 						<img src ="images/side-vk.png" style="width: 100%"><br>
 						<h3>Присоединяйся к Cтае!</h3>
+						<h4 style="display: none">Присоединяйся к Cтае!</h4>
 					</a>
 				</div>
 				
-				<div class="w3-panel w3-center w3-border w3-round-xlarge panel special side temporary" style="background: #000000">
+				<div class="w3-panel w3-center w3-border w3-round-xlarge special side temporary" style="background: #000000">
 					<a target="_blank" href="https://bit.ly/3dzt0Ks" style="text-decoration: none" title="Скачать тему для плеера AIMP">
 						<img src ="images/side-aimp.png" style="width: 100%"><br>
 						<h3>Прокачай свой плеер!</h3>
+						<h4 style="display: none">Прокачай свой плеер!</h4>
 					</a>
 				</div>
 			</div>
 		</main>
-		<footer class="w3-teal responsive" style="font-size: 22px">
+		<footer class="w3-teal full" style="font-size: 22px">
 			<nav class="w3-bar">
-				<a target="_blank" class="w3-bar-item w3-button w3-right" href="https://bit.ly/36eWxY4" title="Первая часть на YouTube"><img src="images/footer-youtube.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right" href="https://bit.ly/3dCa9OT" title="Наша группа ВКонтакте"><img src="images/footer-vk.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right" href="https://bit.ly/37gwCjt" title="Иностранные фанфики по Альфе и Омеге"><img src="images/footer-fanfiction.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right" href="https://bit.ly/2S5NMr1" title="Русскоязычные фанфики по Альфе и Омеге"><img src="images/footer-ficbook.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right" href="https://bit.ly/346d1Ao" title="Официальный сайт создателей Альфы и Омеги"><img src="images/footer-splash.png" class="footer-logo"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/36eWxY4" title="Первая часть на YouTube"><img src="images/footer-youtube.png" class="footer-logo"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/3dCa9OT" title="Наша группа ВКонтакте"><img src="images/footer-vk.png" class="footer-logo"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/37gwCjt" title="Иностранные фанфики по Альфе и Омеге"><img src="images/footer-fanfiction.png" class="footer-logo"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/2S5NMr1" title="Русскоязычные фанфики по Альфе и Омеге"><img src="images/footer-ficbook.png" class="footer-logo"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/346d1Ao" title="Официальный сайт создателей Альфы и Омеги"><img src="images/footer-splash.png" class="footer-logo"></a>
 			</nav>
 			<div class="w3-center" style="padding: 5px">
 				E-mail: <a href="mailto:fans.alphaandomega@gmail.com?Subject=About%20site" target="_top" style="text-decoration: none" title="Написать разработчику">fans.alphaandomega@gmail.com</a>

@@ -9,16 +9,6 @@ html, body {
 	height: 100%;
 }
 
-/*body {
-	background: rgb(182,206,193);
-	background: -moz-linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
-	background: -webkit-linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
-	background: linear-gradient(0deg, rgba(182,206,193,1) 0%, rgba(57,175,203,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6cec1",endColorstr="#39afcb",GradientType=1);
-	background-position: center center;
-	background-repeat: no-repeat;
-}*/	
-
 body {
 	background-image: url(../images/bg-light.jpg);
 }	
@@ -129,12 +119,7 @@ header a, footer a {
 	.cover {
 		height: 80vh;
 	}
-	
-	/*.ost {
-		width: 70vh;
-		height: 70vh;
-	}*/	
-	
+		
 	.leftpart, .rightpart, .leftmusic, .rightmusic {
 		padding: 2%;
 	}	
