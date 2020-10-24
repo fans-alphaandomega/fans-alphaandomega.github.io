@@ -1,6 +1,5 @@
 function openPage(pageName) {
-	var i;
-	var x = document.getElementsByClassName("page-left");
+	var x = document.querySelectorAll('.page-left');
 	for (i = 0; i < x.length; i++) {
 		x[i].style.display = "none";  
 	}
