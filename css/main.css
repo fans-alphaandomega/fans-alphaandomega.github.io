@@ -42,7 +42,7 @@ body {
 	background: transparent !important;
 }	
 
-p {
+p, li {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 20px;
 }	
@@ -107,6 +107,10 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 3% 3% 0 !important;
 }
 
+.size {
+	height: 36px;
+}	
+
 .temporary {
 	margin-bottom: 16px;
 }	
@@ -126,8 +130,12 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 4px 2px !important;
 }	
 
-.text-white {
-	color: white !important;
+.w3-indigo {
+	color: yellow !important;
+}
+
+.w3-dark-grey {
+	color: orange !important;
 }	
 
 .text-yellow {
@@ -149,6 +157,22 @@ h1, h2, h3, h4, h5, h6 {
 	}	
 }	
 
+@media (max-width: 991.98px) {
+	nav button, .navlogo {
+		padding-left: 4px !important;
+		padding-right: 4px !important;
+	}
+
+	nav a, footer a {
+		padding-left: 8px !important;
+		padding-right: 8px !important;
+	}
+	
+	.page-left, .page-right {
+		padding: 0.01em 6px !important; 
+	}	
+}	
+
 @media (max-width: 767.98px) {	
 	.lb, .side h3, .rightpart h3, .rightmusic h3 {
 		display: none !important;
@@ -156,10 +180,10 @@ h1, h2, h3, h4, h5, h6 {
 
 	.sb, .side h4, .rightpart h4, .rightmusic h4 {
 		display: block !important;
-	}	
+	}
 }	
 	
-@media (orientation: portrait) {		
+@media (max-width: 991.98px) and (orientation: landscape) {		
 	.lb {
 		display: none !important;
 	}
@@ -169,5 +193,10 @@ h1, h2, h3, h4, h5, h6 {
 	}	
 }	
 
+@media (orientation: landscape) {
+	.size {
+		height: 48px;
+	}	
+}	
  
 

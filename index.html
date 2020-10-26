@@ -14,12 +14,11 @@
 		<script src="js/imageSlider.js"></script>
 	</head>
 	<body>		
-		<header class="w3-row full">
+		<header class="w3-row w3-hide-small full">
 			<img src="images/header-big.png" class="w3-col w3-hide-small" style="width: 100%; height: 100%; padding: 2%">
-			<img src="images/header-nav-logo.png" class="w3-col w3-hide-medium w3-hide-large" style="padding: 4%">
 		</header>
 				
-		<nav class="w3-teal w3-bar full" style="font-size: 20px">
+		<nav class="w3-teal w3-bar w3-hide-small w3-hide-medium full" style="font-size: 20px">
 			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
@@ -27,6 +26,18 @@
 			<button class="w3-bar-item w3-button w3-right" onclick="lightMode()" id="sun" style="display: none">Активировать светлую тему</button>
 			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/en-US" title="Перейти на английскую версию сайта">Английская версия</a></button>-->
 			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/mobile" title="Перейти на мобильную версию сайта">Мобильная версия</a></button>-->
+		</nav>
+		
+		<nav class="w3-bar w3-teal w3-hide-large full">
+			<div class="w3-bar-item w3-left navlogo"><img src="images/header-nav-logo.png" class="size"></div>
+			<button class="w3-bar-item w3-button w3-left" onclick="darkMode()" id="sun"><img src="images/nav-darktheme.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-left" onclick="lightMode()" id="moon" style="display: none"><img src="images/nav-lighttheme.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Characters')" id="sun"><img src="images/nav-characters.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Characters')" id="moon" style="display: none"><img src="images/nav-characters-y.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-right" onclick="openPage('OST')" id="sun"><img src="images/nav-ost.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-right" onclick="openPage('OST')" id="moon" style="display: none"><img src="images/nav-ost-y.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Main')" id="sun"><img src="images/nav-main.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Main')" id="moon" style="display: none"><img src="images/nav-main-y.png" class="size"></button>
 		</nav>
 		
 		<main class="w3-row responsive">
@@ -323,31 +334,32 @@
 					<div class="w3-col rightmusic" style="width: 50%">					
 						<h3>Альфа и Омега: Оригинальный саундтрек (2010)</h3>
 						<h4 style="display: none">Альфа и Омега: Оригинальный саундтрек (2010)</h4>
-						<p>
-							Композитор - Крис Бэкон<br/></br>
-							01 - Pre Teen Wolves<br/>
-							02 - Main Titles<br/>
-							03 - Candu Was Jumped<br/>
-							04 - Humphrey's Crew<br/>
-							05 - Garth<br/>
-							06 - Wolfnapped<br/>
-							07 - Idaho or Bust<br/>
-							08 - The Golfing Goose<br/>
-							09 - Flying Fowl<br/>
-							10 - Searching for Kate<br/>
-							11 - Eat Food, Get Gas<br/>
-							12 - Tails It Is<br/>
-							13 - Garth and Lilly<br/>
-							14 - Bears!<br/>
-							15 - Love Train<br/>
-							16 - Time's Up<br/>
-							17 - I've Had Fun<br/>
-							18 - Unite The Packs<br/>
-							19 - Alphas and Omegas<br/>
-							20 - Take the Valley<br/>
-							21 - Requiem for Kate<br/>
-							22 - Big Finish<br/>
-						</p>
+						<p>Композитор - Крис Бэкон</p>
+						<p>Cписок композиций:</p>
+						<ul>	
+							<li>Pre Teen Wolves</li>
+							<li>Main Titles</li>
+							<li>Candu Was Jumped</li>
+							<li>Humphrey's Crew</li>
+							<li>Garth</li>
+							<li>Wolfnapped</li>
+							<li>Idaho or Bust</li>
+							<li>The Golfing Goose</li>
+							<li>Flying Fowl</li>
+							<li>Searching for Kate</li>
+							<li>Eat Food, Get Gas</li>
+							<li>Tails It Is</li>
+							<li>Garth and Lilly</li>
+							<li>Bears!</li>
+							<li>Love Train</li>
+							<li>Time's Up</li>
+							<li>I've Had Fun</li>
+							<li>Unite The Packs</li>
+							<li>Alphas and Omegas</li>
+							<li>Take the Valley</li>
+							<li>Requiem for Kate</li>
+							<li>Big Finish</li>
+						</ul>
 					</div>	
 				</div>
 			</section>	
@@ -380,11 +392,11 @@
 		</main>
 		<footer class="w3-teal full" style="font-size: 22px">
 			<nav class="w3-bar">
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/36eWxY4" title="Первая часть на YouTube"><img src="images/footer-youtube.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/3dCa9OT" title="Наша группа ВКонтакте"><img src="images/footer-vk.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/37gwCjt" title="Иностранные фанфики по Альфе и Омеге"><img src="images/footer-fanfiction.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/2S5NMr1" title="Русскоязычные фанфики по Альфе и Омеге"><img src="images/footer-ficbook.png" class="footer-logo"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/346d1Ao" title="Официальный сайт создателей Альфы и Омеги"><img src="images/footer-splash.png" class="footer-logo"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/36eWxY4" title="Первая часть на YouTube"><img src="images/footer-youtube.png" class="size"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/3dCa9OT" title="Наша группа ВКонтакте"><img src="images/footer-vk.png" class="size"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/37gwCjt" title="Иностранные фанфики по Альфе и Омеге"><img src="images/footer-fanfiction.png" class="size"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/2S5NMr1" title="Русскоязычные фанфики по Альфе и Омеге"><img src="images/footer-ficbook.png" class="size"></a>
+				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/346d1Ao" title="Официальный сайт создателей Альфы и Омеги"><img src="images/footer-splash.png" class="size"></a>
 			</nav>
 			<div class="w3-center" style="padding: 5px">
 				E-mail: <a href="mailto:fans.alphaandomega@gmail.com?Subject=About%20site" target="_top" style="text-decoration: none" title="Написать разработчику">fans.alphaandomega@gmail.com</a>
