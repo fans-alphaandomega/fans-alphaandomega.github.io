@@ -13,7 +13,7 @@
 		<script src="js/showMore.js"></script>
 		<script src="js/imageSlider.js"></script>
 	</head>
-	<body onload="iDevice()" class="body">		
+	<body onload="iDevice()">		
 		<header class="w3-row w3-hide-small full">
 			<img src="images/header-big.png" class="w3-col w3-hide-small" style="width: 100%; height: 100%; padding: 2%">
 		</header>
@@ -22,16 +22,16 @@
 			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
-			<button class="w3-bar-item w3-button w3-right" onclick="darkMode()" id="moon">Активировать тёмную тему</button>
-			<button class="w3-bar-item w3-button w3-right" onclick="lightMode()" id="sun" style="display: none">Активировать светлую тему</button>
+			<button class="w3-bar-item w3-button w3-right dm" onclick="darkMode()" id="sun">Активировать тёмную тему</button>
+			<button class="w3-bar-item w3-button w3-right lm" onclick="lightMode()" id="moon" style="display: none">Активировать светлую тему</button>
 			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/en-US" title="Перейти на английскую версию сайта">Английская версия</a></button>-->
 			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/mobile" title="Перейти на мобильную версию сайта">Мобильная версия</a></button>-->
 		</nav>
 		
 		<nav class="w3-bar w3-teal w3-hide-large full">
 			<div class="w3-bar-item w3-left navlogo"><img src="images/header-nav-logo.png" class="size"></div>
-			<button class="w3-bar-item w3-button w3-left" onclick="darkMode()" id="sun"><img src="images/nav-darktheme.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-left" onclick="lightMode()" id="moon" style="display: none"><img src="images/nav-lighttheme.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-left dm" onclick="darkMode()" id="sun"><img src="images/nav-darktheme.png" class="size"></button>
+			<button class="w3-bar-item w3-button w3-left lm" onclick="lightMode()" id="moon" style="display: none"><img src="images/nav-lighttheme.png" class="size"></button>
 			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Characters')" id="sun"><img src="images/nav-characters.png" class="size"></button>
 			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Characters')" id="moon" style="display: none"><img src="images/nav-characters-y.png" class="size"></button>
 			<button class="w3-bar-item w3-button w3-right" onclick="openPage('OST')" id="sun"><img src="images/nav-ost.png" class="size"></button>

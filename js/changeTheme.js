@@ -1,6 +1,10 @@
 function darkMode() {
 	var i, j, k, l, m;
 	var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	// background
+	var u = document.body;
+	if (isIOS) {u.classList.toggle("idark");}
+	else {u.classList.toggle("dark");};
 	// teal elements
 	var v = document.querySelectorAll('.w3-teal');
 	for (i = 0; i < v.length; i++) {
@@ -26,16 +30,16 @@ function darkMode() {
 	var z = document.querySelectorAll('.side');
 	for (m = 0; m < z.length; m++) {
 		z[m].classList.toggle("text-yellow");
-	}
-	// background
-	var u = document.body;
-	if (isIOS) {u.classList.toggle("idark");}
-	else {u.classList.toggle("dark");}	
+	}	
 }
 
 function lightMode() {
 	var i, j, k, l, m;
-	var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;	
+	var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	// background
+	var u = document.body;
+	if (isIOS) {u.classList.toggle("idark");}
+	else {u.classList.toggle("dark");}
 	// teal elements
 	var v = document.querySelectorAll('.w3-indigo');
 	for (i = 0; i < v.length; i++) {
@@ -62,8 +66,4 @@ function lightMode() {
 	for (m = 0; m < z.length; m++) {
 		z[m].classList.toggle("text-yellow");
 	}
-	// background
-	var u = document.body;
-	if (isIOS) {u.classList.toggle("idark");}
-	else {u.classList.toggle("dark");}
 }

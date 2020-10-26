@@ -19,6 +19,7 @@ html, body {
 
 .ibody {
 	background-image: url(../images/bg-light.jpg);
+	background-attachment: scroll;
 	color: white;
 }
 
