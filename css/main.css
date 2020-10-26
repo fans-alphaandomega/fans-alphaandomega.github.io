@@ -7,7 +7,7 @@ html, body {
 	vertical-align: baseline;
 }
 
-body {
+.body {
 	background-image: url(../images/bg_light.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -16,6 +16,16 @@ body {
 	line-height: 1;
 	color: white;
 }
+
+.ibody {
+	background-image: url(../images/bg-light.jpg);
+	color: white;
+}
+
+.idark {
+	background-image: url(../images/bg-dark.jpg);
+	color: yellow !important;
+}	
 
 .dark {
 	background-image: url(../images/bg_dark.jpg);
