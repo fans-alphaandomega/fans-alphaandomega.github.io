@@ -10,6 +10,8 @@
 		<script src="js/detectMobile.js"></script>
 		<script src="js/changeTheme.js"></script>
 		<script src="js/openPage.js"></script>
+		<script src="js/showMore.js"></script>
+		<script src="js/imageSlider.js"></script>
 	</head>
 	<body>		
 		<header class="w3-row full">
@@ -17,7 +19,7 @@
 			<img src="images/header-nav-logo.png" class="w3-col w3-hide-medium w3-hide-large" style="padding: 4%">
 		</header>
 				
-		<nav class="w3-teal w3-bar full" style="font-size: 22px">
+		<nav class="w3-teal w3-bar full" style="font-size: 20px">
 			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
@@ -28,7 +30,11 @@
 		</nav>
 		
 		<main class="w3-row responsive">
-			<div class="w3-col w3-container m8 l8 page-left" id="Main">
+			<section class="w3-col w3-container m8 l8 page-left" id="Main">
+				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
+					<h1>Главная</h1>
+				</div>
+				
 				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
 					<div class="w3-third leftpart">
 						<img src="images/movie1.jpg" class="w3-round cover">
@@ -177,15 +183,135 @@
 						of her kingdom.</p>
 					</div>	
 				</div>
-			</div>
+			</section>
 			
-			<div class="w3-col w3-container m8 l8 s12 page-left" id="Characters" style="display: none">
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<h1>Персонажи. Раздел в разработке</h1>
+			<section class="w3-col w3-container m8 l8 s12 page-left" id="Characters" style="display: none">
+				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
+					<h1>Персонажи</h1>
 				</div>
-			</div>
+			
+				<div class="w3-teal w3-panel w3-border w3-row w3-round-xlarge">
+					<div id="avatar-section">
+						<img src="images/char-kate.png" onclick="showMore('.kate')" class="w3-quarter w3-round char">
+						<img src="images/char-humphrey.png" onclick="showMore('.humphrey')" class="w3-quarter w3-round char">
+						<img src="images/char-lilly.png" onclick="showMore('.lilly')" class="w3-quarter w3-round char">
+						<img src="images/char-garth.png" onclick="showMore('.garth')" class="w3-quarter w3-round char">
+					</div>
+					
+					<div id="slider-section" class="w3-section">
+						<img class="kateSlide slide w3-round" src="images/slider-kate1.jpg" style="display:none">
+						<img class="kateSlide slide w3-round" src="images/slider-kate2.jpg" style="display:none">
+						<img class="kateSlide slide w3-round" src="images/slider-kate3.jpg" style="display:none">
+						<img class="kateSlide slide w3-round" src="images/slider-kate4.jpg" style="display:none">
+						<img class="humphreySlide slide w3-round" src="images/slider-humphrey1.jpg" style="display:none">
+						<img class="humphreySlide slide w3-round" src="images/slider-humphrey2.jpg" style="display:none">
+						<img class="humphreySlide slide w3-round" src="images/slider-humphrey3.jpg" style="display:none">
+						<img class="humphreySlide slide w3-round" src="images/slider-humphrey4.jpg" style="display:none">
+						<img class="lillySlide slide w3-round" src="images/slider-lilly1.jpg" style="display:none">
+						<img class="lillySlide slide w3-round" src="images/slider-lilly2.jpg" style="display:none">
+						<img class="lillySlide slide w3-round" src="images/slider-lilly3.jpg" style="display:none">
+						<img class="lillySlide slide w3-round" src="images/slider-lilly4.jpg" style="display:none">
+						<img class="garthSlide slide w3-round" src="images/slider-garth1.jpg" style="display:none">
+						<img class="garthSlide slide w3-round" src="images/slider-garth2.jpg" style="display:none">
+						<img class="garthSlide slide w3-round" src="images/slider-garth3.jpg" style="display:none">
+						<img class="garthSlide slide w3-round" src="images/slider-garth4.jpg" style="display:none">
+							
+						<div class="w3-row-padding">
+							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate1.jpg" onclick="currentDiv(1, '.kate')" style="display:none">
+							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate2.jpg" onclick="currentDiv(2, '.kate')" style="display:none">
+							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate3.jpg" onclick="currentDiv(3, '.kate')" style="display:none">
+							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate4.jpg" onclick="currentDiv(4, '.kate')" style="display:none">
+							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey1.jpg" onclick="currentDiv(1, '.humphrey')" style="display:none">
+							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey2.jpg" onclick="currentDiv(2, '.humphrey')" style="display:none">
+							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey3.jpg" onclick="currentDiv(3, '.humphrey')" style="display:none">
+							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey4.jpg" onclick="currentDiv(4, '.humphrey')" style="display:none">
+							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly1.jpg" onclick="currentDiv(1, '.lilly')" style="display:none">
+							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly2.jpg" onclick="currentDiv(2, '.lilly')" style="display:none">
+							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly3.jpg" onclick="currentDiv(3, '.lilly')" style="display:none">
+							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly4.jpg" onclick="currentDiv(4, '.lilly')" style="display:none">
+							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth1.jpg" onclick="currentDiv(1, '.garth')" style="display:none">
+							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth2.jpg" onclick="currentDiv(2, '.garth')" style="display:none">
+							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth3.jpg" onclick="currentDiv(3, '.garth')" style="display:none">
+							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth4.jpg" onclick="currentDiv(4, '.garth')" style="display:none">
+						</div>
+					</div>
+					
+					<!--
+					<div id="slider-section">
+						<div class="kate slider" style="display: none">
+							<img class="kateSlide slide w3-round" src="images/slider-kate1.jpg">
+							<img class="kateSlide slide w3-round" src="images/slider-kate2.jpg" style="display:none">
+							<img class="kateSlide slide w3-round" src="images/slider-kate3.jpg" style="display:none">
+							<img class="kateSlide slide w3-round" src="images/slider-kate4.jpg" style="display:none">
+							
+							<div class="w3-row w3-section">
+								<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate1.jpg" onclick="currentDiv(1, '.kate')">
+								<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate2.jpg" onclick="currentDiv(2, '.kate')">
+								<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate3.jpg" onclick="currentDiv(3, '.kate')">
+								<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate4.jpg" onclick="currentDiv(4, '.kate')">
+							</div>
+						</div>
+
+						<div class="humphrey slider" style="display: none">
+							<img class="humphreySlide slide w3-round" src="images/slider-humphrey1.jpg">
+							<img class="humphreySlide slide w3-round" src="images/slider-humphrey2.jpg" style="display:none">
+							<img class="humphreySlide slide w3-round" src="images/slider-humphrey3.jpg" style="display:none">
+							<img class="humphreySlide slide w3-round" src="images/slider-humphrey4.jpg" style="display:none">
+							
+							<div class="w3-row w3-section">
+								<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey1.jpg" onclick="currentDiv(1, '.humphrey')">
+								<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey2.jpg" onclick="currentDiv(2, '.humphrey')">
+								<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey3.jpg" onclick="currentDiv(3, '.humphrey')">
+								<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey4.jpg" onclick="currentDiv(4, '.humphrey')">
+							</div>
+						</div>
+
+						<div class="lilly slider" style="display: none">
+							<img class="lillySlide slide w3-round" src="images/slider-lilly1.jpg">
+							<img class="lillySlide slide w3-round" src="images/slider-lilly2.jpg" style="display:none">
+							<img class="lillySlide slide w3-round" src="images/slider-lilly3.jpg" style="display:none">
+							<img class="lillySlide slide w3-round" src="images/slider-lilly4.jpg" style="display:none">
+							
+							<div class="w3-row w3-section">
+								<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly1.jpg" onclick="currentDiv(1, '.lilly')">
+								<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly2.jpg" onclick="currentDiv(2, '.lilly')">
+								<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly3.jpg" onclick="currentDiv(3, '.lilly')">
+								<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly4.jpg" onclick="currentDiv(4, '.lilly')">
+							</div>
+						</div>	
+					</div>
+					-->
+					<div id="bio-section">
+					<!--
+						<div id="intro" class="w3-container bio">
+							<p>Нажмите на картинку, чтобы увидеть информацию о персонаже</p>
+						</div>
+					-->
+						<div class="w3-container kate bio" id="kate" style="display: none">
+							<h3>Кейт</h3>
+							<p>Кейт - Альфа-волчица из Западной Стаи, дочь Уинстона и Ив, сестра Лили</p>
+						</div>
+						<div class="w3-container humphrey bio" id="humphrey" style="display: none">
+							<h3>Хамфри</h3>
+							<p>Хамфри - Омега-волк из Западной Стаи, родители неизвестны</p>
+						</div>
+						<div class="w3-container lilly bio" id="lilly" style="display: none">
+							<h3>Лили</h3>
+							<p>Лили - Омега-волчица из Западной Стаи, дочь Уинстона и Ив, сестра Кейт</p>
+						</div>
+						<div class="w3-container garth bio" id="garth" style="display: none">
+							<h3>Гарт</h3>
+							<p>Гарт - Альфа-волк из Восточной Стаи, сын Тони</p>
+						</div>
+					</div>
+				</div>
+			</section>
 		
-			<div class="w3-col w3-container m8 l8 s12 page-left" id="OST" style="display: none">
+			<section class="w3-col w3-container m8 l8 s12 page-left" id="OST" style="display: none">
+				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
+					<h1>Саундтрек</h1>
+				</div>
+				
 				<div class="w3-row w3-teal w3-panel w3-border w3-round-xlarge panel">
 					<div class="w3-col leftmusic" style="width: 50%">
 						<img src="images/listen-ost.jpg" class="w3-round w3-image cover">
@@ -224,9 +350,9 @@
 						</p>
 					</div>	
 				</div>
-			</div>	
+			</section>	
 			
-			<div class="w3-col m4 l4 w3-hide-small w3-container page-right">
+			<section class="w3-col m4 l4 w3-hide-small w3-container page-right">
 				<div class="w3-panel w3-center w3-border w3-round-xlarge side special" style="background: #4f1700">		
 					<a target="_blank" href="https://bit.ly/2S5NMr1" style="text-decoration: none" title="Фанфики по Альфе и Омеге">
 						<img src ="images/side-ficbook.png" style="width: 100%"><br>
@@ -250,7 +376,7 @@
 						<h4 style="display: none">Прокачай свой плеер!</h4>
 					</a>
 				</div>
-			</div>
+			</section>
 		</main>
 		<footer class="w3-teal full" style="font-size: 22px">
 			<nav class="w3-bar">
