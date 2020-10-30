@@ -1,4 +1,6 @@
 function showMore(character) {
+	document.getElementById('slider-section').style.display = "block";
+	document.getElementById('bio-section').style.display = "block";
 	var t = 1;
 	var u = document.querySelectorAll('.bio');
 	for (i = 0; i < u.length; i++) {
@@ -26,4 +28,11 @@ function showMore(character) {
 		z[k].style.display = "block";
 	}
 	currentDiv(n = t, name = character);
+	document.getElementById('roll').style.display = "block";
 }
+
+function rollUp() {
+	document.getElementById('slider-section').style.display = "none";
+	document.getElementById('bio-section').style.display = "none";
+	document.getElementById('avatar-section').scrollIntoView({behavior: "smooth"});
+}	
