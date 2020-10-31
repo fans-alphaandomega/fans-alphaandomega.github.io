@@ -70,6 +70,7 @@ new Vue ({
 		closeBio: function() {
 			this.show = false
 			this.$refs['bio'].scrollIntoView({ behavior: 'smooth'})
+			this.currentChar = 0
 		}
 	}
 })	
