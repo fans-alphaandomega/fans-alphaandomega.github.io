@@ -13,6 +13,7 @@
 		<link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
 		<link rel="stylesheet" href="css/w3.css">
 		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vue.js"></script>
 		<script src="js/iDevice.js"></script>
 		<script src="js/changeTheme.js"></script>
 		<script src="js/openPage.js"></script>
@@ -20,11 +21,11 @@
 		<script src="js/imageSlider.js"></script>
 	</head>
 	<body onload="iDevice()" class="body">		
-		<header class="w3-row w3-hide-small full">
+		<header class="w3-row w3-hide-small responsive">
 			<img src="images/header-big.png" class="w3-col w3-hide-small" style="width: 100%; height: 100%; padding: 2%">
 		</header>
 				
-		<nav class="w3-teal w3-bar w3-hide-small w3-hide-medium full" style="font-size: 20px">
+		<nav class="w3-teal w3-bar w3-hide-small w3-hide-medium responsive" style="font-size: 20px">
 			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
 			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
@@ -34,7 +35,7 @@
 			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/mobile" title="Перейти на мобильную версию сайта">Мобильная версия</a></button>-->
 		</nav>
 		
-		<nav class="w3-bar w3-teal w3-hide-large full">
+		<nav class="w3-bar w3-teal w3-hide-large responsive">
 			<div class="w3-bar-item w3-left navlogo"><img src="images/header-nav-logo.png" class="size"></div>
 			<button class="w3-bar-item w3-button w3-left dm" onclick="darkMode()" id="sun"><img src="images/nav-darktheme.png" class="size"></button>
 			<button class="w3-bar-item w3-button w3-left lm" onclick="lightMode()" id="moon" style="display: none"><img src="images/nav-lighttheme.png" class="size"></button>
@@ -207,75 +208,43 @@
 					<h1>Персонажи</h1>
 				</div>
 			
-				<div class="w3-teal w3-panel w3-border w3-row w3-round-xlarge">
-					<div id="avatar-section">
-						<img src="images/char-kate.png" onclick="showMore('.kate')" class="w3-quarter w3-round char">
-						<img src="images/char-humphrey.png" onclick="showMore('.humphrey')" class="w3-quarter w3-round char">
-						<img src="images/char-lilly.png" onclick="showMore('.lilly')" class="w3-quarter w3-round char">
-						<img src="images/char-garth.png" onclick="showMore('.garth')" class="w3-quarter w3-round char">
+				<div class="w3-teal w3-panel w3-border w3-row w3-round-xlarge" id="bio" ref="bio">
+					<div class="w3-row" id="avatar">
+						<img src="images/char-kate.png" v-on:click="getBio(1)" class="w3-quarter w3-round char">
+						<img src="images/char-humphrey.png" v-on:click="getBio(2)" class="w3-quarter w3-round char">
+						<img src="images/char-lilly.png" v-on:click="getBio(3)" class="w3-quarter w3-round char">
+						<img src="images/char-garth.png" v-on:click="getBio(4)" class="w3-quarter w3-round char">
 					</div>
 					
-					<div id="slider-section" class="w3-section">
-						<img class="kateSlide slide w3-round" src="images/slider-kate1.jpg" style="display:none">
-						<img class="kateSlide slide w3-round" src="images/slider-kate2.jpg" style="display:none">
-						<img class="kateSlide slide w3-round" src="images/slider-kate3.jpg" style="display:none">
-						<img class="kateSlide slide w3-round" src="images/slider-kate4.jpg" style="display:none">
-						<img class="humphreySlide slide w3-round" src="images/slider-humphrey1.jpg" style="display:none">
-						<img class="humphreySlide slide w3-round" src="images/slider-humphrey2.jpg" style="display:none">
-						<img class="humphreySlide slide w3-round" src="images/slider-humphrey3.jpg" style="display:none">
-						<img class="humphreySlide slide w3-round" src="images/slider-humphrey4.jpg" style="display:none">
-						<img class="lillySlide slide w3-round" src="images/slider-lilly1.jpg" style="display:none">
-						<img class="lillySlide slide w3-round" src="images/slider-lilly2.jpg" style="display:none">
-						<img class="lillySlide slide w3-round" src="images/slider-lilly3.jpg" style="display:none">
-						<img class="lillySlide slide w3-round" src="images/slider-lilly4.jpg" style="display:none">
-						<img class="garthSlide slide w3-round" src="images/slider-garth1.jpg" style="display:none">
-						<img class="garthSlide slide w3-round" src="images/slider-garth2.jpg" style="display:none">
-						<img class="garthSlide slide w3-round" src="images/slider-garth3.jpg" style="display:none">
-						<img class="garthSlide slide w3-round" src="images/slider-garth4.jpg" style="display:none">
+					<div class="w3-section" ref="info">
+						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'">
+						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '2.jpg'" style="display:none">
+						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '3.jpg'" style="display:none">
+						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '4.jpg'" style="display:none">
 							
 						<div class="w3-row" style="margin-top: 5px">
-							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate1.jpg" onclick="currentDiv(1, '.kate')" style="display:none">
-							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate2.jpg" onclick="currentDiv(2, '.kate')" style="display:none">
-							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate3.jpg" onclick="currentDiv(3, '.kate')" style="display:none">
-							<img class="kateDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-kate4.jpg" onclick="currentDiv(4, '.kate')" style="display:none">
-							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey1.jpg" onclick="currentDiv(1, '.humphrey')" style="display:none">
-							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey2.jpg" onclick="currentDiv(2, '.humphrey')" style="display:none">
-							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey3.jpg" onclick="currentDiv(3, '.humphrey')" style="display:none">
-							<img class="humphreyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-humphrey4.jpg" onclick="currentDiv(4, '.humphrey')" style="display:none">
-							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly1.jpg" onclick="currentDiv(1, '.lilly')" style="display:none">
-							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly2.jpg" onclick="currentDiv(2, '.lilly')" style="display:none">
-							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly3.jpg" onclick="currentDiv(3, '.lilly')" style="display:none">
-							<img class="lillyDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-lilly4.jpg" onclick="currentDiv(4, '.lilly')" style="display:none">
-							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth1.jpg" onclick="currentDiv(1, '.garth')" style="display:none">
-							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth2.jpg" onclick="currentDiv(2, '.garth')" style="display:none">
-							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth3.jpg" onclick="currentDiv(3, '.garth')" style="display:none">
-							<img class="garthDemo demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" src="images/slider-garth4.jpg" onclick="currentDiv(4, '.garth')" style="display:none">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'" onclick="currentDiv(1)">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '2.jpg'" onclick="currentDiv(2)">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '3.jpg'" onclick="currentDiv(3)">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '4.jpg'" onclick="currentDiv(4)">
 						</div>
-					</div>
-
-					<div id="bio-section">
-						<div class="w3-container kate bio" id="kate" style="display: none">
-							<h3>Кейт</h3>
-							<p>Кейт - Альфа-волчица из Западной Стаи, дочь Уинстона и Ив, сестра Лили</p>
-						</div>
-						<div class="w3-container humphrey bio" id="humphrey" style="display: none">
-							<h3>Хамфри</h3>
-							<p>Хамфри - Омега-волк из Западной Стаи, родители неизвестны</p>
-						</div>
-						<div class="w3-container lilly bio" id="lilly" style="display: none">
-							<h3>Лили</h3>
-							<p>Лили - Омега-волчица из Западной Стаи, дочь Уинстона и Ив, сестра Кейт</p>
-						</div>
-						<div class="w3-container garth bio" id="garth" style="display: none">
-							<h3>Гарт</h3>
-							<p>Гарт - Альфа-волк из Восточной Стаи, сын Тони</p>
-						</div>
-						<div id="roll" style="display: none">
-							<button class="w3-button w3-right" onclick="rollUp()" id="sun"><img src="images/roll.png" class="size"></button>
-							<button class="w3-button w3-right" onclick="rollUp()" id="moon" style="display: none"><img src="images/roll-y.png" class="size"></button>
+						
+						<div class="w3-container" v-if="show">
+							<h3>{{ bio[currentChar].name }}</h3>
+							<p><i>Вид:</i> {{ bio[currentChar].species }}</p>
+							<p><i>Статус:</i> {{ bio[currentChar].status }}</p>
+							<p><i>Принадлежность:</i> {{ bio[currentChar].pack }}</p>
+							<p><i>Родители:</i> {{ bio[currentChar].parents }}</p>
+							<p><i>Братья/сёстры:</i> {{ bio[currentChar].siblings }}</p>
+							<p><i>Отношения:</i> {{ bio[currentChar].partner }}</p>
+							<p>{{ bio[currentChar].about }}</p>
+							<button class="w3-button w3-right" v-on:click="closeBio()" id="sun"><img src="images/roll.png" class="size"></button>
+							<button class="w3-button w3-right" v-on:click="closeBio()" id="moon" style="display: none"><img src="images/roll-y.png" class="size"></button>
 						</div>
 					</div>		
 				</div>
+				
+				<script src="js/charList.js"></script>
 			</section>
 		
 			<section class="w3-col w3-container m8 l8 s12 page-left" id="OST" style="display: none">
@@ -350,7 +319,7 @@
 				</div>
 			</section>
 		</main>
-		<footer class="w3-teal full" style="font-size: 22px">
+		<footer class="w3-teal responsive" style="font-size: 22px">
 			<nav class="w3-bar">
 				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/36eWxY4" title="Первая часть на YouTube"><img src="images/footer-youtube.png" class="size"></a>
 				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/3dCa9OT" title="Наша группа ВКонтакте"><img src="images/footer-vk.png" class="size"></a>

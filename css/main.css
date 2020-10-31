@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*---- PAGE SIZE ----*/
 
-.responsive, .full {
+.responsive {
 	margin: auto;
 	width: 70%;
 }
@@ -104,6 +104,8 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0.01em 8px !important; 
 }	
 
+/*---- IMAGES STYLE ----*/
+
 .cover, .slide {
 	width: 100%;
 }	
@@ -128,13 +130,13 @@ h1, h2, h3, h4, h5, h6 {
 	filter: sepia(40%);
 }
 
-.special {
-	padding: 3% 3% 0 !important;
-}
-
 .size {
 	height: 36px;
 }	
+
+.special {
+	padding: 3% 3% 0 !important;
+}
 
 .temporary {
 	margin-bottom: 16px;
@@ -155,6 +157,8 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 4px 2px !important;
 }	
 
+/*---- DARK MODE'S ADDITIONAL STYLE ----*/
+
 .w3-indigo {
 	color: yellow !important;
 }
@@ -174,12 +178,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 1599.98px) {
 	.responsive {
-		width: 98%;
-	}
-
-	.full {
 		width: 100%;
-	}	
+	}
 }	
 
 @media (max-width: 991.98px) {
