@@ -1,10 +1,22 @@
+function iDevice() {	
+	var isApple = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	var x = document.body;
+	if (isApple) {
+		x.classList.toggle("ibody");
+	}
+	else {
+		x.classList.toggle("body");
+	}	
+}
+
+
 function darkMode() {
 	var i, j, k, l, m;
-	var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	var isApple = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 	// background
 	var u = document.body;
-	if (isIOS) {u.classList.toggle("idark");}
-	else {u.classList.toggle("dark");};
+	if (isApple) {u.classList.toggle("idark");}
+	else {u.classList.toggle("dark");}
 	// teal elements
 	var v = document.querySelectorAll('.w3-teal');
 	for (i = 0; i < v.length; i++) {
@@ -35,10 +47,10 @@ function darkMode() {
 
 function lightMode() {
 	var i, j, k, l, m;
-	var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	var isApple = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 	// background
 	var u = document.body;
-	if (isIOS) {u.classList.toggle("idark");}
+	if (isApple) {u.classList.toggle("idark");}
 	else {u.classList.toggle("dark");}
 	// teal elements
 	var v = document.querySelectorAll('.w3-indigo');

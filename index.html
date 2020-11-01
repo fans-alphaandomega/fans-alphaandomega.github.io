@@ -14,41 +14,35 @@
 		<link rel="stylesheet" href="css/w3.css">
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/vue.min.js"></script>
-		<script src="js/iDevice.js"></script>
 		<script src="js/changeTheme.js"></script>
-		<script src="js/openPage.js"></script>
-		<script src="js/showMore.js"></script>
-		<script src="js/imageSlider.js"></script>
 	</head>
-	<body onload="iDevice()" class="body">		
+	<body onload="iDevice()">		
 		<header class="w3-row w3-hide-small responsive">
 			<img src="images/header-big.png" class="w3-col w3-hide-small" style="width: 100%; height: 100%; padding: 2%">
 		</header>
 				
-		<nav class="w3-teal w3-bar w3-hide-small w3-hide-medium responsive" style="font-size: 20px">
-			<button class="w3-bar-item w3-button" onclick="openPage('Main')">Главная</button>
-			<button class="w3-bar-item w3-button" onclick="openPage('Characters')">Персонажи</button>
-			<button class="w3-bar-item w3-button" onclick="openPage('OST')">Саундтрек</button>
-			<button class="w3-bar-item w3-button w3-right dm" onclick="darkMode()" id="sun">Активировать тёмную тему</button>
-			<button class="w3-bar-item w3-button w3-right lm" onclick="lightMode()" id="moon" style="display: none">Активировать светлую тему</button>
-			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/en-US" title="Перейти на английскую версию сайта">Английская версия</a></button>-->
-			<!--<button class="w3-bar-item w3-button w3-right"><a href="https://fans-alphaandomega.github.io/mobile" title="Перейти на мобильную версию сайта">Мобильная версия</a></button>-->
-		</nav>
+		<main class="w3-row responsive" id="main">
+			<nav class="w3-teal w3-bar w3-hide-small w3-hide-medium" style="font-size: 20px">
+				<button class="w3-bar-item w3-button" v-on:click="openPage(0)">Главная</button>
+				<button class="w3-bar-item w3-button" v-on:click="openPage(1)">Персонажи</button>
+				<button class="w3-bar-item w3-button" v-on:click="openPage(2)">Саундтрек</button>
+				<button class="w3-bar-item w3-button w3-right dm" onclick="darkMode()" id="sun">Активировать тёмную тему</button>
+				<button class="w3-bar-item w3-button w3-right lm" onclick="lightMode()" id="moon" style="display: none">Активировать светлую тему</button>
+			</nav>
 		
-		<nav class="w3-bar w3-teal w3-hide-large responsive">
-			<div class="w3-bar-item w3-left navlogo"><img src="images/header-nav-logo.png" class="size"></div>
-			<button class="w3-bar-item w3-button w3-left dm" onclick="darkMode()" id="sun"><img src="images/nav-darktheme.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-left lm" onclick="lightMode()" id="moon" style="display: none"><img src="images/nav-lighttheme.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Characters')" id="sun"><img src="images/nav-characters.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Characters')" id="moon" style="display: none"><img src="images/nav-characters-y.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-right" onclick="openPage('OST')" id="sun"><img src="images/nav-ost.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-right" onclick="openPage('OST')" id="moon" style="display: none"><img src="images/nav-ost-y.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Main')" id="sun"><img src="images/nav-main.png" class="size"></button>
-			<button class="w3-bar-item w3-button w3-right" onclick="openPage('Main')" id="moon" style="display: none"><img src="images/nav-main-y.png" class="size"></button>
-		</nav>
-		
-		<main class="w3-row responsive">
-			<section class="w3-col w3-container m8 l8 page-left" id="Main">
+			<nav class="w3-bar w3-teal w3-hide-large">
+				<div class="w3-bar-item w3-left navlogo"><img src="images/header-nav-logo.png" class="size"></div>
+				<button class="w3-bar-item w3-button w3-left dm" onclick="darkMode()" id="sun"><img src="images/nav-darktheme.png" class="size"></button>
+				<button class="w3-bar-item w3-button w3-left lm" onclick="lightMode()" id="moon" style="display: none"><img src="images/nav-lighttheme.png" class="size"></button>
+				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(2)" id="sun"><img src="images/nav-ost.png" class="size"></button>
+				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(2)" id="moon" style="display: none"><img src="images/nav-ost-y.png" class="size"></button>
+				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(1)" id="sun"><img src="images/nav-characters.png" class="size"></button>
+				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(1)" id="moon" style="display: none"><img src="images/nav-characters-y.png" class="size"></button>
+				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(0)" id="sun"><img src="images/nav-main.png" class="size"></button>
+				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(0)" id="moon" style="display: none"><img src="images/nav-main-y.png" class="size"></button>
+			</nav>
+			
+			<section class="w3-col w3-container m8 l8 page-left" v-show="pageIndex === 0" id="a">
 				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
 					<h1>Главная</h1>
 				</div>
@@ -122,9 +116,9 @@
 						<h3>Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h3>
 						<h4 style="display: none">Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h4>
 						<p>The Alphas and Omegas share a thrilling adventure filled with suspense, humor and 
-						heartwarming moments after Runt - Kate and Humphrey's Omega wolf cub - sneaks off to 
+						heartwarming moments after Runt – Kate and Humphrey's Omega wolf cub – sneaks off to 
 						explore the haunted Saw Tooth Cave. When Runt finds a wolf that's been driven from her 
-						pack for being different, he musters all his courage to help her - and learns the joys 
+						pack for being different, he musters all his courage to help her – and learns the joys 
 						of lending a paw to a friend in need.</p>
 					</div>	
 				</div>
@@ -137,11 +131,11 @@
 						<!--<a target="_blank" href="https://apple.co/3jdlSoV" class="w3-button w3-white w3-round-xxlarge">Купить в <img src="images/itunes.png" class="sitelogo"></a>-->
 					</div>
 					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 5: Семейный отдых(2015)</h3>
-						<h4 style="display: none">Альфа и Омега 5: Семейный отдых(2015)</h4>
+						<h3>Альфа и Омега 5: Семейный отдых (2015)</h3>
+						<h4 style="display: none">Альфа и Омега 5: Семейный отдых (2015)</h4>
 						<p>Pack up for a howling fun movie adventure filled with action, laughs, and tender 
 						moments as Kate and Humphrey take their pups on their first family vacation! The wolves 
-						are ready for a relaxing getaway to Alfred Creek Falls - until they discover trappers 
+						are ready for a relaxing getaway to Alfred Creek Falls – until they discover trappers 
 						on their trail. To outwit the trappers and get to safety, Kate and Humphrey will need 
 						the help of a wild and wonderful group of animal friends in this unforgettable story of 
 						family togetherness.</p>
@@ -178,7 +172,7 @@
 						<h4 style="display: none">Альфа и Омега 7: Большое обледенение (2016)</h4>
 						<p>Join everyone's favorite alpha and omega wolves for a heartwarming holiday adventure!
 						When Kate and Humphrey get lost in the woods and fail to appear for the holidays, their 
-						wolf pups—Stinky, Claudette, and Runt—take matters into their own paws and venture out 
+						wolf pups – Stinky, Claudette, and Runt – take matters into their own paws and venture out 
 						into a blizzard to rescue them. Joined by Brent the sleepy bear cub and Agnes the feisty 
 						porcupine, the pups prove that neither blinding snow, nor rival wolves, nor hungry bears 
 						will keep them from spending the holidays together as a family.</p>
@@ -196,14 +190,14 @@
 						<h3>Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h3>
 						<h4 style="display: none">Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h4>
 						<p>When the Queen Bear and her daughter, Princess Canue, visit the Eastern Valley an 
-						epic war breaks out -- Rogue Wolves versus the Western Pack and the Bear Army. Now, it's 
+						epic war breaks out – Rogue Wolves versus the Western Pack and the Bear Army. Now, it's 
 						up to Stinky, Claudette, and Runt to help Princess Canue return home to regain control 
 						of her kingdom.</p>
 					</div>	
 				</div>
 			</section>
 			
-			<section class="w3-col w3-container m8 l8 s12 page-left" id="Characters" style="display: none">
+			<section class="w3-col w3-container m8 l8 s12 page-left" v-show="pageIndex === 1" id="b">
 				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
 					<h1>Персонажи</h1>
 				</div>
@@ -216,20 +210,20 @@
 						<img src="images/char-garth.png" v-on:click="getBio(4)" class="w3-quarter w3-round char">
 					</div>
 					
-					<div class="w3-section" ref="info">
-						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'">
+					<div class="w3-container">
+						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'" ref="info">
 						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '2.jpg'" style="display:none">
 						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '3.jpg'" style="display:none">
 						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '4.jpg'" style="display:none">
 							
 						<div class="w3-row" style="margin-top: 5px">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'" onclick="currentDiv(1)">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '2.jpg'" onclick="currentDiv(2)">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '3.jpg'" onclick="currentDiv(3)">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '4.jpg'" onclick="currentDiv(4)">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'" v-on:click="showDivs(1)">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '2.jpg'" v-on:click="showDivs(2)">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '3.jpg'" v-on:click="showDivs(3)">
+							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '4.jpg'" v-on:click="showDivs(4)">
 						</div>
 						
-						<div class="w3-container" v-if="show">
+						<div class="w3-container" v-show="show">
 							<h3>{{ bio[currentChar].name }}</h3>
 							<p><i>Вид:</i> {{ bio[currentChar].species }}</p>
 							<p><i>Статус:</i> {{ bio[currentChar].status }}</p>
@@ -243,11 +237,9 @@
 						</div>
 					</div>		
 				</div>
-				
-				<script src="js/charList.js"></script>
 			</section>
 		
-			<section class="w3-col w3-container m8 l8 s12 page-left" id="OST" style="display: none">
+			<section class="w3-col w3-container m8 l8 s12 page-left" v-show="pageIndex === 2" id="c">
 				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
 					<h1>Саундтрек</h1>
 				</div>
@@ -333,5 +325,8 @@
 				Designed by Nomad_Wolf (2020)
 			</div>
 		</footer>
+		
+		<script src="js/charList.js"></script>
+		
 	</body>
 </html>
