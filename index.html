@@ -8,316 +8,334 @@
 		<meta property="og:description" content="Фан-сайт, посвящённый мультипликационной серии 'Альфа и Омега'" />
 		<meta property="og:type" content="article"/>
 		<meta property="og:url" content="https://fans-alphaandomega.github.io"/>
-		<meta property="og:image" content="https://fans-alphaandomega.github.io/images/og.png"/>
-		<meta property="vk:image" content="https://fans-alphaandomega.github.io/images/og.png"/>
+		<meta property="og:image" content="https://fans-alphaandomega.github.io/img/og.png"/>
+		<meta property="vk:image" content="https://fans-alphaandomega.github.io/img/og.png"/>
 		<title>Фан-сайт Альфы и Омеги</title>
-		<link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
+		<link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
 		<link rel="stylesheet" href="css/w3.css">
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/vue.min.js"></script>
-		<script src="js/changeTheme.js"></script>
+		<script>
+			function detectDevice() {
+				var x = document.getElementById("wrapper");
+				var y = document.getElementById("sorry");
+				if (screen.width < 320 || screen.height < 320) {
+					isSmall = true;
+					x.classList.toggle("w3-hide");
+					y.classList.toggle("w3-hide");
+				}	
+				var isApple = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+				if (isApple) {x.classList.toggle("ibody");}
+				else {x.classList.toggle("body");}
+			}
+		</script>
 	</head>
-	<body onload="iDevice()">		
-		<header class="w3-row w3-hide-small responsive">
-			<img src="images/header-big.png" class="w3-col w3-hide-small" style="width: 100%; height: 100%; padding: 2%">
-		</header>
-				
-		<main class="w3-row responsive" id="main">
-			<nav class="w3-teal w3-bar w3-hide-small w3-hide-medium" style="font-size: 20px">
-				<button class="w3-bar-item w3-button" v-on:click="openPage(0)">Главная</button>
-				<button class="w3-bar-item w3-button" v-on:click="openPage(1)">Персонажи</button>
-				<button class="w3-bar-item w3-button" v-on:click="openPage(2)">Саундтрек</button>
-				<button class="w3-bar-item w3-button w3-right dm" onclick="darkMode()" id="sun">Активировать тёмную тему</button>
-				<button class="w3-bar-item w3-button w3-right lm" onclick="lightMode()" id="moon" style="display: none">Активировать светлую тему</button>
-			</nav>
-		
-			<nav class="w3-bar w3-teal w3-hide-large">
-				<div class="w3-bar-item w3-left navlogo"><img src="images/header-nav-logo.png" class="size"></div>
-				<button class="w3-bar-item w3-button w3-left dm" onclick="darkMode()" id="sun"><img src="images/nav-darktheme.png" class="size"></button>
-				<button class="w3-bar-item w3-button w3-left lm" onclick="lightMode()" id="moon" style="display: none"><img src="images/nav-lighttheme.png" class="size"></button>
-				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(2)" id="sun"><img src="images/nav-ost.png" class="size"></button>
-				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(2)" id="moon" style="display: none"><img src="images/nav-ost-y.png" class="size"></button>
-				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(1)" id="sun"><img src="images/nav-characters.png" class="size"></button>
-				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(1)" id="moon" style="display: none"><img src="images/nav-characters-y.png" class="size"></button>
-				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(0)" id="sun"><img src="images/nav-main.png" class="size"></button>
-				<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(0)" id="moon" style="display: none"><img src="images/nav-main-y.png" class="size"></button>
-			</nav>
+	<body onload="detectDevice()">
+		<div id="wrapper" ref="wrapper">
+			<header class="w3-row w3-hide-small responsive">
+				<img src="img/header-big.png" class="w3-col w3-hide-small" style="width: 100%; height: 100%; padding: 2%">
+			</header>
+					
+			<main class="w3-row responsive" id="main">
+				<nav class="w3-teal w3-bar w3-hide-small w3-hide-medium" style="font-size: 20px">
+					<button class="w3-bar-item w3-button" v-on:click="openPage(0)">Главная</button>
+					<button class="w3-bar-item w3-button" v-on:click="openPage(1)">Персонажи</button>
+					<button class="w3-bar-item w3-button" v-on:click="openPage(2)">Саундтрек</button>
+					<button class="w3-bar-item w3-button w3-right moon" v-show="buttonIndex === 0" v-on:click="darkMode">Активировать тёмную тему</button>
+					<button class="w3-bar-item w3-button w3-right sun" v-show="buttonIndex === 1" v-on:click="lightMode" style="display: none">Активировать светлую тему</button>
+				</nav>
 			
-			<section class="w3-col w3-container m8 l8 page-left" v-show="pageIndex === 0">
-				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
-					<h1>Главная</h1>
-				</div>
+				<nav class="w3-bar w3-teal w3-hide-large">
+					<div class="w3-bar-item w3-left navlogo"><img src="img/header-nav-logo.png" class="size"></div>
+					<button class="w3-bar-item w3-button w3-left moon" v-show="buttonIndex === 0" v-on:click="darkMode"><img src="img/nav-darktheme.png" class="size"></button>
+					<button class="w3-bar-item w3-button w3-left sun" v-show="buttonIndex === 1" v-on:click="lightMode"><img src="img/nav-lighttheme.png" class="size"></button>
+					<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(2)"><img src="img/nav-ost-y.png" class="size color filter"></button>
+					<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(1)"><img src="img/nav-characters-y.png" class="size color filter"></button>
+					<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(0)"><img src="img/nav-main-y.png" class="size color filter"></button>
+				</nav>
 				
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie1.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/2Fsn09K" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/2Fsn09K" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
-					</div>
-					<div class="w3-twothird rightpart">
-						<h3>Альфа и Омега: Клыкастая братва (2010)</h3>
-						<h4 style="display: none">Альфа и Омега: Клыкастая братва (2010)</h4>
-						<p>Come along on the ultimate road-trip adventure that will leave the whole family 
-						howling with laughter! When Kate and Humphrey, Alpha and Omega wolves, are suddenly 
-						relocated, they must begin an incredible journey home to Jasper Park to save their pack!</p>
-					</div>
-				</div>
-				
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie2.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/3jcaZ71" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/3jcaZ71" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
-					</div>
-					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 2: Приключения праздничного воя (2013)</h3>
-						<h4 style="display: none">Альфа и Омега 2: Приключения праздничного воя (2013)</h4>
-						<p>Kate and Humphrey and their 3 wolf cubs, Stinky, Claudette and Runt, are happily 
-						preparing to celebrate their first winter holidays together when their smallest cub, Runt, 
-						mysteriously disappears. They must now go on a new journey across the wilderness to find 
-						and bring back Runt before the winter festivities begin at home. It's their greatest 
-						adventure yet, filled with both action and suspense as well as plenty of the humor and 
-						heartwarming moments that was delivered in the first theatrical release. While their 
-						adventure does not end exactly as planned, in the end Kate and Humphrey must make new 
-						holiday plans, but discover that "Home is where the Family is".</p> 
-					</div>	
-				</div>
-				
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie3.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/34aAwXM" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/34aAwXM" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
-					</div>
-					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 3: Великие волчьи игры (2014)</h3>
-						<h4 style="display: none">Альфа и Омега 3: Великие волчьи игры (2014)</h4>
-						<p>Join the pack in this wild, warm hearted and totally pawsome adventure starring 
-						everyone's favorite alphas and omegas! It's time for "The Great Wolf Games," when all 
-						the alphas in the packs set aside their differences for some friendly competition. When 
-						an unexpected accident puts many of our pack's star alpha wolves out of commission, a 
-						new team is assembled that includes forest friends not in the pack. Can Coach Humphrey 
-						lead his ragtag group of "underdogs" to victory? Find out in this thrilling movie that 
-						will leave you howling for more!</p>
-					</div>	
-				</div>			
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie4.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/3jdcrG1" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/3jdcrG1" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>		
-					</div>
-					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h3>
-						<h4 style="display: none">Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h4>
-						<p>The Alphas and Omegas share a thrilling adventure filled with suspense, humor and 
-						heartwarming moments after Runt – Kate and Humphrey's Omega wolf cub – sneaks off to 
-						explore the haunted Saw Tooth Cave. When Runt finds a wolf that's been driven from her 
-						pack for being different, he musters all his courage to help her – and learns the joys 
-						of lending a paw to a friend in need.</p>
-					</div>	
-				</div>
-				
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie5.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/3cDVWAz" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/3cDVWAz" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>
-					</div>
-					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 5: Семейный отдых (2015)</h3>
-						<h4 style="display: none">Альфа и Омега 5: Семейный отдых (2015)</h4>
-						<p>Pack up for a howling fun movie adventure filled with action, laughs, and tender 
-						moments as Kate and Humphrey take their pups on their first family vacation! The wolves 
-						are ready for a relaxing getaway to Alfred Creek Falls – until they discover trappers 
-						on their trail. To outwit the trappers and get to safety, Kate and Humphrey will need 
-						the help of a wild and wonderful group of animal friends in this unforgettable story of 
-						family togetherness.</p>
-					</div>	
-				</div>
-				
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie6.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/3igQyV0" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/3igQyV0" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
-					</div>
-					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 6: Прогулка с динозавром (2016)</h3>
-						<h4 style="display: none">Альфа и Омега 6: Прогулка с динозавром (2016)</h4>
-						<p>After Kate, Humphrey, and their three pups are forced to relocate their den, they 
-						discover Amy, a friendly raptor that magically came to life after being uncovered 
-						during a big dig! The pups and their forest friends show Amy the wonders of their new 
-						world, and must work together and try to stop the diggers from unearthing the dangerous 
-						T-Rex before it’s too late!</p>
-					</div>	
-				</div>
-				
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie7.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/3jdldnr" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/3jdldnr" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>
-					</div>
-					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 7: Большое обледенение (2016)</h3>
-						<h4 style="display: none">Альфа и Омега 7: Большое обледенение (2016)</h4>
-						<p>Join everyone's favorite alpha and omega wolves for a heartwarming holiday adventure!
-						When Kate and Humphrey get lost in the woods and fail to appear for the holidays, their 
-						wolf pups – Stinky, Claudette, and Runt – take matters into their own paws and venture out 
-						into a blizzard to rescue them. Joined by Brent the sleepy bear cub and Agnes the feisty 
-						porcupine, the pups prove that neither blinding snow, nor rival wolves, nor hungry bears 
-						will keep them from spending the holidays together as a family.</p>
-					</div>	
-				</div>
-				
-				<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-third leftpart">
-						<img src="images/movie8.jpg" class="w3-round cover">
-						<a target="_blank" href="https://bit.ly/30ge9iH" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
-						<a target="_blank" href="https://bit.ly/30ge9iH" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>
-					</div>
-					<div class="w3-twothird rightpart">					
-						<h3>Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h3>
-						<h4 style="display: none">Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h4>
-						<p>When the Queen Bear and her daughter, Princess Canue, visit the Eastern Valley an 
-						epic war breaks out – Rogue Wolves versus the Western Pack and the Bear Army. Now, it's 
-						up to Stinky, Claudette, and Runt to help Princess Canue return home to regain control 
-						of her kingdom.</p>
-					</div>	
-				</div>
-			</section>
-			
-			<section class="w3-col w3-container m8 l8 s12 page-left" v-show="pageIndex === 1">
-				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
-					<h1>Персонажи</h1>
-				</div>
-			
-				<div class="w3-teal w3-panel w3-border w3-row w3-round-xlarge" id="bio" ref="bio">
-					<div class="w3-row" id="avatar">
-						<img src="images/char-kate.png" v-on:click="getBio(1)" class="w3-quarter w3-round char">
-						<img src="images/char-humphrey.png" v-on:click="getBio(2)" class="w3-quarter w3-round char">
-						<img src="images/char-lilly.png" v-on:click="getBio(3)" class="w3-quarter w3-round char">
-						<img src="images/char-garth.png" v-on:click="getBio(4)" class="w3-quarter w3-round char">
+				<section class="w3-col w3-container m8 l8 page-left" v-show="pageIndex === 0">
+					<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
+						<h1>Главная</h1>
 					</div>
 					
-					<div class="w3-container">
-						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'" ref="info">
-						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '2.jpg'" style="display:none">
-						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '3.jpg'" style="display:none">
-						<img class="slide w3-round" v-bind:src="'images/slider-' + bio[currentChar].picture + '4.jpg'" style="display:none">
-							
-						<div class="w3-row" style="margin-top: 5px">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '1.jpg'" v-on:click="showDivs(1)">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '2.jpg'" v-on:click="showDivs(2)">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '3.jpg'" v-on:click="showDivs(3)">
-							<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'images/slider-' + bio[currentChar].picture + '4.jpg'" v-on:click="showDivs(4)">
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie1.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/2Fsn09K" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/2Fsn09K" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
+						</div>
+						<div class="w3-twothird rightpart">
+							<h3>Альфа и Омега: Клыкастая братва (2010)</h3>
+							<h4 style="display: none">Альфа и Омега: Клыкастая братва (2010)</h4>
+							<p>Come along on the ultimate road-trip adventure that will leave the whole family 
+							howling with laughter! When Kate and Humphrey, Alpha and Omega wolves, are suddenly 
+							relocated, they must begin an incredible journey home to Jasper Park to save their pack!</p>
+						</div>
+					</div>
+					
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie2.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/3jcaZ71" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/3jcaZ71" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
+						</div>
+						<div class="w3-twothird rightpart">					
+							<h3>Альфа и Омега 2: Приключения праздничного воя (2013)</h3>
+							<h4 style="display: none">Альфа и Омега 2: Приключения праздничного воя (2013)</h4>
+							<p>Kate and Humphrey and their 3 wolf cubs, Stinky, Claudette and Runt, are happily 
+							preparing to celebrate their first winter holidays together when their smallest cub, Runt, 
+							mysteriously disappears. They must now go on a new journey across the wilderness to find 
+							and bring back Runt before the winter festivities begin at home. It's their greatest 
+							adventure yet, filled with both action and suspense as well as plenty of the humor and 
+							heartwarming moments that was delivered in the first theatrical release. While their 
+							adventure does not end exactly as planned, in the end Kate and Humphrey must make new 
+							holiday plans, but discover that "Home is where the Family is".</p> 
+						</div>	
+					</div>
+					
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie3.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/34aAwXM" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/34aAwXM" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
+						</div>
+						<div class="w3-twothird rightpart">					
+							<h3>Альфа и Омега 3: Великие волчьи игры (2014)</h3>
+							<h4 style="display: none">Альфа и Омега 3: Великие волчьи игры (2014)</h4>
+							<p>Join the pack in this wild, warm hearted and totally pawsome adventure starring 
+							everyone's favorite alphas and omegas! It's time for "The Great Wolf Games," when all 
+							the alphas in the packs set aside their differences for some friendly competition. When 
+							an unexpected accident puts many of our pack's star alpha wolves out of commission, a 
+							new team is assembled that includes forest friends not in the pack. Can Coach Humphrey 
+							lead his ragtag group of "underdogs" to victory? Find out in this thrilling movie that 
+							will leave you howling for more!</p>
+						</div>	
+					</div>			
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie4.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/3jdcrG1" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/3jdcrG1" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>		
+						</div>
+						<div class="w3-twothird rightpart">					
+							<h3>Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h3>
+							<h4 style="display: none">Альфа и Омега 4: Легенда о Зубастой Пещере (2014)</h4>
+							<p>The Alphas and Omegas share a thrilling adventure filled with suspense, humor and 
+							heartwarming moments after Runt – Kate and Humphrey's Omega wolf cub – sneaks off to 
+							explore the haunted Saw Tooth Cave. When Runt finds a wolf that's been driven from her 
+							pack for being different, he musters all his courage to help her – and learns the joys 
+							of lending a paw to a friend in need.</p>
+						</div>	
+					</div>
+					
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie5.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/3cDVWAz" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/3cDVWAz" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>
+						</div>
+						<div class="w3-twothird rightpart">					
+							<h3>Альфа и Омега 5: Семейный отдых (2015)</h3>
+							<h4 style="display: none">Альфа и Омега 5: Семейный отдых (2015)</h4>
+							<p>Pack up for a howling fun movie adventure filled with action, laughs, and tender 
+							moments as Kate and Humphrey take their pups on their first family vacation! The wolves 
+							are ready for a relaxing getaway to Alfred Creek Falls – until they discover trappers 
+							on their trail. To outwit the trappers and get to safety, Kate and Humphrey will need 
+							the help of a wild and wonderful group of animal friends in this unforgettable story of 
+							family togetherness.</p>
+						</div>	
+					</div>
+					
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie6.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/3igQyV0" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/3igQyV0" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>	
+						</div>
+						<div class="w3-twothird rightpart">					
+							<h3>Альфа и Омега 6: Прогулка с динозавром (2016)</h3>
+							<h4 style="display: none">Альфа и Омега 6: Прогулка с динозавром (2016)</h4>
+							<p>After Kate, Humphrey, and their three pups are forced to relocate their den, they 
+							discover Amy, a friendly raptor that magically came to life after being uncovered 
+							during a big dig! The pups and their forest friends show Amy the wonders of their new 
+							world, and must work together and try to stop the diggers from unearthing the dangerous 
+							T-Rex before it’s too late!</p>
+						</div>	
+					</div>
+					
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie7.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/3jdldnr" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/3jdldnr" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>
+						</div>
+						<div class="w3-twothird rightpart">					
+							<h3>Альфа и Омега 7: Большое обледенение (2016)</h3>
+							<h4 style="display: none">Альфа и Омега 7: Большое обледенение (2016)</h4>
+							<p>Join everyone's favorite alpha and omega wolves for a heartwarming holiday adventure!
+							When Kate and Humphrey get lost in the woods and fail to appear for the holidays, their 
+							wolf pups – Stinky, Claudette, and Runt – take matters into their own paws and venture out 
+							into a blizzard to rescue them. Joined by Brent the sleepy bear cub and Agnes the feisty 
+							porcupine, the pups prove that neither blinding snow, nor rival wolves, nor hungry bears 
+							will keep them from spending the holidays together as a family.</p>
+						</div>	
+					</div>
+					
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-third leftpart">
+							<img src="img/movie8.jpg" class="w3-round cover">
+							<a target="_blank" href="https://bit.ly/30ge9iH" class="w3-button w3-white w3-round-large lb" title="Бесплатный онлайн-кинотеатр">Смотреть на <b>BASKINO</b></a>
+							<a target="_blank" href="https://bit.ly/30ge9iH" class="w3-button w3-white w3-round-large sb" style="display: none" title="Бесплатный онлайн-кинотеатр"><b>BASKINO</b></a>
+						</div>
+						<div class="w3-twothird rightpart">					
+							<h3>Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h3>
+							<h4 style="display: none">Альфа и Омега 8: Путешествие в Медвежье Королевство (2017)</h4>
+							<p>When the Queen Bear and her daughter, Princess Canue, visit the Eastern Valley an 
+							epic war breaks out – Rogue Wolves versus the Western Pack and the Bear Army. Now, it's 
+							up to Stinky, Claudette, and Runt to help Princess Canue return home to regain control 
+							of her kingdom.</p>
+						</div>	
+					</div>
+				</section>
+				
+				<section class="w3-col w3-container m8 l8 s12 page-left" v-show="pageIndex === 1">
+					<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
+						<h1>Персонажи</h1>
+					</div>
+				
+					<div class="w3-teal w3-panel w3-border w3-row w3-round-xlarge" id="bio" ref="bio">
+						<div class="w3-row" id="avatar">
+							<img src="img/char-kate.png" v-on:click="getBio(1)" class="w3-quarter w3-round char">
+							<img src="img/char-humphrey.png" v-on:click="getBio(2)" class="w3-quarter w3-round char">
+							<img src="img/char-lilly.png" v-on:click="getBio(3)" class="w3-quarter w3-round char">
+							<img src="img/char-garth.png" v-on:click="getBio(4)" class="w3-quarter w3-round char">
 						</div>
 						
-						<div class="w3-container" v-show="show">
-							<h3>{{ bio[currentChar].name }}</h3>
-							<p><i>Вид:</i> {{ bio[currentChar].species }}</p>
-							<p><i>Статус:</i> {{ bio[currentChar].status }}</p>
-							<p><i>Принадлежность:</i> {{ bio[currentChar].pack }}</p>
-							<p><i>Родители:</i> {{ bio[currentChar].parents }}</p>
-							<p><i>Братья/сёстры:</i> {{ bio[currentChar].siblings }}</p>
-							<p><i>Отношения:</i> {{ bio[currentChar].partner }}</p>
-							<p>{{ bio[currentChar].about }}</p>
-							<button class="w3-button w3-right" v-on:click="closeBio()" id="sun"><img src="images/roll.png" class="size"></button>
-							<button class="w3-button w3-right" v-on:click="closeBio()" id="moon" style="display: none"><img src="images/roll-y.png" class="size"></button>
-						</div>
-					</div>		
-				</div>
-			</section>
-		
-			<section class="w3-col w3-container m8 l8 s12 page-left" v-show="pageIndex === 2">
-				<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
-					<h1>Саундтрек</h1>
-				</div>
-				
-				<div class="w3-row w3-teal w3-panel w3-border w3-round-xlarge panel">
-					<div class="w3-col leftmusic" style="width: 50%">
-						<img src="images/listen-ost.jpg" class="w3-round w3-image cover">
-						<a target="_blank" href="https://bit.ly/2GZIxqu" class="w3-button w3-white w3-round-large" style="width: 100%; margin-top: 10px" title="Скачать бесплатно с нашего Google Drive"><b>СКАЧАТЬ</b></a>
-						<a target="_blank" href="https://bit.ly/3iU6zR0" class="w3-button listen" title="Слушать бесплатно на YouTube"><img src="../images/listen-youtube.png" style="width: 100%"></a>
-						<a target="_blank" href="https://apple.co/3nKyczS" class="w3-button listen" title="Слушать с подпиской в Apple Music"><img src="../images/listen-apple.png" style="width: 100%"></a>
-						<a target="_blank" href="https://spoti.fi/34a669k" class="w3-button listen" title="Слушать с подпиской в Spotify"><img src="../images/listen-spotify.png" style="width: 100%"></a>
+						<div>
+							<img class="slide w3-round" v-bind:src="'img/slider-' + bio[currentChar].picture + '1.jpg'" ref="info">
+							<img class="slide w3-round" v-bind:src="'img/slider-' + bio[currentChar].picture + '2.jpg'" style="display:none">
+							<img class="slide w3-round" v-bind:src="'img/slider-' + bio[currentChar].picture + '3.jpg'" style="display:none">
+							<img class="slide w3-round" v-bind:src="'img/slider-' + bio[currentChar].picture + '4.jpg'" style="display:none">
+								
+							<div class="w3-row" style="margin-top: 5px">
+								<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'img/slider-' + bio[currentChar].picture + '1.jpg'" v-on:click="showDivs(1)">
+								<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'img/slider-' + bio[currentChar].picture + '2.jpg'" v-on:click="showDivs(2)">
+								<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'img/slider-' + bio[currentChar].picture + '3.jpg'" v-on:click="showDivs(3)">
+								<img class="demo w3-quarter w3-round w3-opacity w3-hover-opacity-off" v-bind:src="'img/slider-' + bio[currentChar].picture + '4.jpg'" v-on:click="showDivs(4)">
+							</div>
+							
+							<div class="w3-container" v-show="show">
+								<h3 class="w3-center">{{ bio[currentChar].name }}</h3>
+								<p><i>Вид:</i> {{ bio[currentChar].species }}</p>
+								<p><i>Статус:</i> {{ bio[currentChar].status }}</p>
+								<p><i>Принадлежность:</i> {{ bio[currentChar].pack }}</p>
+								<p><i>Родители:</i> {{ bio[currentChar].parents }}</p>
+								<p><i>Братья/сёстры:</i> {{ bio[currentChar].siblings }}</p>
+								<p><i>Отношения:</i> {{ bio[currentChar].partner }}</p>
+								<p>{{ bio[currentChar].about }}</p>
+								<button class="w3-button w3-right" v-on:click="closeBio"><img src="img/roll-y.png" class="size color filter"></button>
+							</div>
+						</div>		
 					</div>
-					<div class="w3-col rightmusic" style="width: 50%">					
-						<h3>Альфа и Омега: Оригинальный саундтрек (2010)</h3>
-						<h4 style="display: none">Альфа и Омега: Оригинальный саундтрек (2010)</h4>
-						<p>Композитор - Крис Бэкон</p>
-						<p>Cписок композиций:</p>
-						<ul>	
-							<li>Pre Teen Wolves</li>
-							<li>Main Titles</li>
-							<li>Candu Was Jumped</li>
-							<li>Humphrey's Crew</li>
-							<li>Garth</li>
-							<li>Wolfnapped</li>
-							<li>Idaho or Bust</li>
-							<li>The Golfing Goose</li>
-							<li>Flying Fowl</li>
-							<li>Searching for Kate</li>
-							<li>Eat Food, Get Gas</li>
-							<li>Tails It Is</li>
-							<li>Garth and Lilly</li>
-							<li>Bears!</li>
-							<li>Love Train</li>
-							<li>Time's Up</li>
-							<li>I've Had Fun</li>
-							<li>Unite The Packs</li>
-							<li>Alphas and Omegas</li>
-							<li>Take the Valley</li>
-							<li>Requiem for Kate</li>
-							<li>Big Finish</li>
-						</ul>
-					</div>	
-				</div>
-			</section>	
+				</section>
 			
-			<section class="w3-col m4 l4 w3-hide-small w3-container page-right">
-				<div class="w3-panel w3-center w3-border w3-round-xlarge side special" style="background: #4f1700">		
-					<a target="_blank" href="https://bit.ly/2S5NMr1" style="text-decoration: none" title="Фанфики по Альфе и Омеге">
-						<img src ="images/side-ficbook.png" style="width: 100%"><br>
-						<h3>Приключения продолжаются!</h3>
-						<h4 style="display: none">Приключения продолжаются!</h4>
-					</a>
-				</div>
+				<section class="w3-col w3-container m8 l8 s12 page-left" v-show="pageIndex === 2">
+					<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
+						<h1>Саундтрек</h1>
+					</div>
+					
+					<div class="w3-row w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="w3-col leftmusic" style="width: 50%">
+							<img src="img/listen-ost.jpg" class="w3-round w3-image cover">
+							<a target="_blank" href="https://bit.ly/2GZIxqu" class="w3-button w3-white w3-round-large" style="width: 100%; margin-top: 10px" title="Скачать бесплатно с нашего Google Drive"><b>СКАЧАТЬ</b></a>
+							<a target="_blank" href="https://bit.ly/3iU6zR0" class="w3-button listen" title="Слушать бесплатно на YouTube"><img src="img/listen-youtube.png" style="width: 100%"></a>
+							<a target="_blank" href="https://apple.co/3nKyczS" class="w3-button listen" title="Слушать с подпиской в Apple Music"><img src="img/listen-apple.png" style="width: 100%"></a>
+							<a target="_blank" href="https://spoti.fi/34a669k" class="w3-button listen" title="Слушать с подпиской в Spotify"><img src="img/listen-spotify.png" style="width: 100%"></a>
+						</div>
+						<div class="w3-col rightmusic" style="width: 50%">					
+							<h3>Альфа и Омега: Саундтрек к фильму (2010)</h3>
+							<h4 style="display: none">Альфа и Омега: Саундтрек к фильму (2010)</h4>
+							<p>Композитор - Крис Бэкон</p>
+							<p>Cписок композиций:</p>
+							<ul>	
+								<li>Pre Teen Wolves</li>
+								<li>Main Titles</li>
+								<li>Candu Was Jumped</li>
+								<li>Humphrey's Crew</li>
+								<li>Garth</li>
+								<li>Wolfnapped</li>
+								<li>Idaho or Bust</li>
+								<li>The Golfing Goose</li>
+								<li>Flying Fowl</li>
+								<li>Searching for Kate</li>
+								<li>Eat Food, Get Gas</li>
+								<li>Tails It Is</li>
+								<li>Garth and Lilly</li>
+								<li>Bears!</li>
+								<li>Love Train</li>
+								<li>Time's Up</li>
+								<li>I've Had Fun</li>
+								<li>Unite The Packs</li>
+								<li>Alphas and Omegas</li>
+								<li>Take the Valley</li>
+								<li>Requiem for Kate</li>
+								<li>Big Finish</li>
+							</ul>
+						</div>	
+					</div>
+				</section>	
 				
-				<div class="w3-panel w3-center w3-border w3-round-xlarge side special" style="background: #4d76a1">
-					<a target="_blank" href="https://bit.ly/3dCa9OT" style="text-decoration: none" title="Наша группа ВКонтакте">
-						<img src ="images/side-vk.png" style="width: 100%"><br>
-						<h3>Присоединяйся к Cтае!</h3>
-						<h4 style="display: none">Присоединяйся к Cтае!</h4>
-					</a>
+				<section class="w3-col m4 l4 w3-hide-small w3-container page-right">
+					<div class="w3-text-white w3-panel w3-center w3-border w3-round-xlarge side special" style="background: #4f1700">		
+						<a target="_blank" href="https://bit.ly/2S5NMr1" style="text-decoration: none" title="Фанфики по Альфе и Омеге">
+							<img src ="img/side-ficbook.png" style="width: 100%"><br>
+							<h3>Приключения продолжаются!</h3>
+							<h4 style="display: none">Приключения продолжаются!</h4>
+						</a>
+					</div>
+					
+					<div class="w3-text-white w3-panel w3-center w3-border w3-round-xlarge side special" style="background: #4d76a1">
+						<a target="_blank" href="https://bit.ly/3dCa9OT" style="text-decoration: none" title="Наша группа ВКонтакте">
+							<img src ="img/side-vk.png" style="width: 100%"><br>
+							<h3>Присоединяйся к Cтае!</h3>
+							<h4 style="display: none">Присоединяйся к Cтае!</h4>
+						</a>
+					</div>
+					
+					<div class="w3-text-white w3-panel w3-center w3-border w3-round-xlarge special side temporary" style="background: #000000">
+						<a target="_blank" href="https://bit.ly/3dzt0Ks" style="text-decoration: none" title="Скачать тему для плеера AIMP">
+							<img src ="img/side-aimp.png" style="width: 100%"><br>
+							<h3>Прокачай свой плеер!</h3>
+							<h4 style="display: none">Прокачай свой плеер!</h4>
+						</a>
+					</div>
+				</section>
+			</main>
+			
+			<footer class="w3-teal responsive" style="font-size: 22px">
+				<nav class="w3-bar">
+					<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/36eWxY4" title="Первая часть на YouTube"><img src="img/footer-youtube.png" class="size"></a>
+					<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/3dCa9OT" title="Наша группа ВКонтакте"><img src="img/footer-vk.png" class="size"></a>
+					<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/37gwCjt" title="Иностранные фанфики по Альфе и Омеге"><img src="img/footer-fanfiction.png" class="size"></a>
+					<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/2S5NMr1" title="Русскоязычные фанфики по Альфе и Омеге"><img src="img/footer-ficbook.png" class="size"></a>
+					<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/346d1Ao" title="Официальный сайт создателей Альфы и Омеги"><img src="img/footer-splash.png" class="size"></a>
+				</nav>
+				<div class="w3-center" style="padding: 5px">
+					E-mail: <a href="mailto:fans.alphaandomega@gmail.com?Subject=About%20site" target="_top" style="text-decoration: none" title="Написать разработчику">fans.alphaandomega@gmail.com</a>
+					<br/><br/>
+					Designed by Nomad_Wolf (2020)
 				</div>
-				
-				<div class="w3-panel w3-center w3-border w3-round-xlarge special side temporary" style="background: #000000">
-					<a target="_blank" href="https://bit.ly/3dzt0Ks" style="text-decoration: none" title="Скачать тему для плеера AIMP">
-						<img src ="images/side-aimp.png" style="width: 100%"><br>
-						<h3>Прокачай свой плеер!</h3>
-						<h4 style="display: none">Прокачай свой плеер!</h4>
-					</a>
-				</div>
-			</section>
-		</main>
-		<footer class="w3-teal responsive" style="font-size: 22px">
-			<nav class="w3-bar">
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/36eWxY4" title="Первая часть на YouTube"><img src="images/footer-youtube.png" class="size"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/3dCa9OT" title="Наша группа ВКонтакте"><img src="images/footer-vk.png" class="size"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/37gwCjt" title="Иностранные фанфики по Альфе и Омеге"><img src="images/footer-fanfiction.png" class="size"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/2S5NMr1" title="Русскоязычные фанфики по Альфе и Омеге"><img src="images/footer-ficbook.png" class="size"></a>
-				<a target="_blank" class="w3-bar-item w3-button w3-right footer-link" href="https://bit.ly/346d1Ao" title="Официальный сайт создателей Альфы и Омеги"><img src="images/footer-splash.png" class="size"></a>
-			</nav>
-			<div class="w3-center" style="padding: 5px">
-				E-mail: <a href="mailto:fans.alphaandomega@gmail.com?Subject=About%20site" target="_top" style="text-decoration: none" title="Написать разработчику">fans.alphaandomega@gmail.com</a>
-				<br/><br/>
-				Designed by Nomad_Wolf (2020)
-			</div>
-		</footer>
+			</footer>
+		</div>
 		
-		<script src="js/charList.js"></script>
+		<div class="w3-hide w3-center w3-white" id="sorry" style="padding: 2px">
+			<h3>Фан-сайт Альфы и Омеги</h3>
+			<p>Простите! Ваш экран<br/>
+			слишком мал для этого сайта :(</p>
+		</div>
+		
+		<script src="js/myVue.js"></script>
 		
 	</body>
 </html>

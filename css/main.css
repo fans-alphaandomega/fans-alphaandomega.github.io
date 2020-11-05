@@ -9,6 +9,11 @@ html, body {
 	vertical-align: baseline;
 }
 
+#wrapper {
+	width: 100%;
+	height: 100%;
+}	
+
 .body {
 	background-image: url(../images/bg_light.jpg);
 	background-position: center center;
@@ -86,13 +91,20 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 1%;
 }	
 
-.leftpart, .leftmusic {
+.leftpart, .leftmusic, 
+.rightpart, .rightmusic {
+	padding: 2%;
+}
+
+/*.leftpart, .leftmusic {
 	padding: 2% 1% 2% 2%;
 }
 
 .rightpart, .rightmusic {
 	padding: 2% 2% 2% 1%;
-}	
+}*/
+
+	
 
 .rightpart h3, .rightmusic h3,
 .rightpart h4, .rightmusic h4 {
@@ -104,6 +116,10 @@ h1, h2, h3, h4, h5, h6 {
 }	
 
 /*---- IMAGES STYLE ----*/
+
+.filter {
+	filter: brightness(0) invert(1);
+}	
 
 .cover, .slide {
 	width: 100%;
@@ -156,24 +172,21 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 4px 2px !important;
 }	
 
+.listen:hover, .listen:active, .listen:focus {
+	background-color: transparent !important;
+}	
+
 /*---- DARK MODE'S ADDITIONAL STYLE ----*/
 
-.w3-indigo {
-	color: yellow !important;
-}
-
-.w3-dark-grey {
+.w3-text-orange {
 	color: orange !important;
 }	
 
-.text-yellow {
+.w3-text-yellow {
 	color: yellow !important;
 }	
 
-.text-orange {
-	color: orange !important;
-}	
-
+/*---- MEDIA QUERIES ----*/	
 
 @media (max-width: 1599.98px) {
 	.responsive {
