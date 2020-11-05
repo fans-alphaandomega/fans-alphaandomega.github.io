@@ -100,7 +100,7 @@ new Vue ({
 			for (j = 0; j < x.length; j++) {
 				x[j].classList.toggle("filter")
 			}	
-			var y = this.$el.querySelectorAll(".w3-dark-grey")
+			var y = this.$el.querySelectorAll(".w3-white")
 			for (k = 0; k < y.length; k++) {
 				y[k].className = y[k].className.replace("w3-white", "w3-dark-grey w3-text-orange")
 			}
