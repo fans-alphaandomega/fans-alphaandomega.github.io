@@ -43,10 +43,12 @@
 					<button class="w3-bar-item w3-button" v-on:click="openPage(2)">Саундтрек</button>
 					<button class="w3-bar-item w3-button w3-right moon" v-show="buttonIndex === 0" v-on:click="darkMode">Активировать тёмную тему</button>
 					<button class="w3-bar-item w3-button w3-right sun" v-show="buttonIndex === 1" v-on:click="lightMode" style="display: none">Активировать светлую тему</button>
+					<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(3)">О сайте</button>
 				</nav>
 			
 				<nav class="w3-bar w3-teal w3-hide-large">
 					<div class="w3-bar-item w3-left navlogo"><img src="img/header-nav-logo.png" class="size"></div>
+					<button class="w3-bar-item w3-button w3-left" v-on:click="openPage(3)"><img src="img/nav-about-y.png" class="size color filter"></button>
 					<button class="w3-bar-item w3-button w3-left moon" v-show="buttonIndex === 0" v-on:click="darkMode"><img src="img/nav-darktheme.png" class="size"></button>
 					<button class="w3-bar-item w3-button w3-left sun" v-show="buttonIndex === 1" v-on:click="lightMode"><img src="img/nav-lighttheme.png" class="size"></button>
 					<button class="w3-bar-item w3-button w3-right" v-on:click="openPage(2)"><img src="img/nav-ost-y.png" class="size color filter"></button>
@@ -283,6 +285,41 @@
 								<li>Big Finish</li>
 							</ul>
 						</div>	
+					</div>
+				</section>
+
+				<section class="w3-col w3-container m8 l8 page-left" v-show="pageIndex === 3">
+					<div class="w3-teal w3-panel w3-border w3-center w3-round-xlarge panel">
+						<h1>О сайте</h1>
+					</div>
+					<div class="w3-teal w3-panel w3-border w3-round-xlarge panel">
+						<div class="forVisitor" style="padding: 2%">
+							<h3 class="w3-center">Привет, дорогой друг!</h3>
+							<p>В этом разделе я, Nomad_Wolf, хочу рассказать о сайте, его предназначении и будущих изменениях. Попробую сделать это
+							виде ответов на вопросы. Список будет пополняться со временем.
+							</p>
+							<h4>1) Почему у сайта такой странный адрес?</h4>
+							<p>Сайт пока не расположен на полноценном хостинге, а находится лишь на бесплатной площадке GitHub Pages, 
+							которая используется разработчиками для демонстрации/тестирования проектов. Поэтому адрес сайта и не имеет
+							привычный вам вид.</p>
+							<h4>2) Описания фильмов на английском, а весь остальной сайт на русском. Почему?</h4>
+							<p>Данные официальные описания взяты со страниц фильмов в iTunes, к сожалению, существуют они лишь 
+							в английском варианте. Описание на русском присутствует только у первой части, но его качество оставляет желать
+							лучшего. Постараюсь сделать свои описания как можно скорее...</p>
+							<h4>3) Если это фан-сайт мультфильма, то будут ли здесь выкладываться фанфики по нему?</h4>
+							<p>Нет. Я не ставлю себе цель делать из сайта библиотеку фанфиков. Вы можете прочитать множество интересных работ
+							по Альфе и Омеге на специальных созданных для этого сайтах: Ficbook, Fanfinction, фан-сообщества ВКонтакте. Там же
+							вы можете держать связь с авторами и поддерживать их творчество.</p>
+							<h4>4) Сайт некорректно отображается на моём устройстве. Что делать?</h4>
+							<p>Возможно, вы зашли на сайт в тот момент, когда я вношу в него правки. Это значит, что изменения ещё не вступили
+							в силу, и происходит конфликт между старой и новой информацией. В данном случае проблема с отображением решится в
+							течение нескольких минут. Если же этого не произошло, вы можете сообщить мне о вашей проблеме, связавшись со мной
+							(смотрите последний пункт). По возможности, укажите модель вашего устройства или пришлите снимок экрана.</p>
+							<h4>5) У меня есть свой вопрос. Как получить на него ответ?</h4>
+							<p>Вы можете связаться со мной, написав на электронную почту данного сайта, используя форму внизу страницы или 
+							написав на этот адрес с любой используемой вами почты. В зависимости от вопроса, ответ на него будет либо размещён на 
+							сайте (без упоминания ваших личных данных), либо отправлен вам ответным письмом.</p>
+						</div>
 					</div>
 				</section>	
 				
