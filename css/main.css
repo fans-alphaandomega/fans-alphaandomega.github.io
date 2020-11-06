@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 10px auto 0;
 }	
 
-.w3-panel {
+.w3- {
 	padding: 1%;
 }	
 
@@ -188,13 +188,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /*---- MEDIA QUERIES ----*/	
 
-@media (max-width: 1599.98px) {
+@media (max-width: 1600px) {
 	.responsive {
 		width: 100%;
 	}
 }	
 
-@media (max-width: 991.98px) {
+@media (max-width: 992px) {
 	nav button, .navlogo {
 		padding-left: 4px !important;
 		padding-right: 4px !important;
@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
 	}	
 }	
 
-@media (max-width: 767.98px) {	
+@media (max-width: 768px) {	
 	.lb, .side h3, .rightpart h3, .rightmusic h3 {
 		display: none !important;
 	}
@@ -220,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }	
 	
-@media (max-width: 991.98px) and (orientation: landscape) {		
+@media (max-width: 992px) and (orientation: landscape) {		
 	.lb {
 		display: none !important;
 	}
