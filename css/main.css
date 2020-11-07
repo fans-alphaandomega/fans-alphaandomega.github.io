@@ -87,10 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 10px auto 0;
 }	
 
-.w3-panel {
-	padding: 1%;
-}	
-
 .leftpart, .leftmusic, 
 .rightpart, .rightmusic {
 	padding: 2%;
@@ -176,7 +172,11 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: transparent !important;
 }	
 
-/*---- DARK MODE'S ADDITIONAL STYLE ----*/
+/*---- W3.CSS ADDITIONAL STYLE ----*/
+
+.w3-panel {
+	padding: 1%;
+}
 
 .w3-text-orange {
 	color: orange !important;
