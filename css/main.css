@@ -153,11 +153,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 16px;
 }	
 
-.footer-logo {
-	width: 48px;
-	height: 48px;
-}	
-
 .footer-link {
 	padding-left: 8px !important;
 	padding-right: 8px !important;
@@ -168,7 +163,9 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 4px 2px !important;
 }	
 
-.listen:hover, .listen:active, .listen:focus {
+.listen:hover, .footer-link:hover,
+.listen:active, .footer-link:active,
+.listen:focus, .footer-link:focus {
 	background-color: transparent !important;
 }	
 
